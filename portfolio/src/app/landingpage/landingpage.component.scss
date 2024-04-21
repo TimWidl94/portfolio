@@ -1,0 +1,133 @@
+@import "./../../styles.scss";
+
+section {
+  @include dFlex();
+  width: 100%;
+  height: calc(100vh - 106px);
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.mainContent {
+  @include dFlex($ai: normal);
+  width: 100%;
+  max-width: 1440px;
+  height: 80%;
+  position: absolute;
+  top: 106px;
+}
+
+.imgBox {
+  @include dFlex();
+  background-color: green;
+  width: 40%;
+  max-width: 800px;
+  > img {
+    @include dFlex();
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.imgShadow {
+  position: relative;
+  top: 0;
+  left: -646px;
+}
+
+.textBox {
+  @include dFlex();
+  width: 60%;
+  height: 100%;
+  background-color: purple;
+  flex-direction: column;
+  overflow: hidden;
+  >div{
+    @include dFlex();
+    max-height: 172px;
+    max-width: 718px;
+    >p{
+      @include dFlex();
+      font-size: 64px;
+      line-height: 76.8px;
+      font-weight: 400;
+      max-width: 152px;
+      max-height: 63px;
+      transform: rotate(270deg);
+      color: white;
+      white-space: nowrap;
+      margin: 0;
+    }
+    >div{
+      @include dFlex($ai: start);
+      flex-direction: column;
+    }
+  }
+  >button{
+    position: absolute;
+    top: 513px;
+  }
+}
+
+.nameText{
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 108px;
+  max-width: 620px;
+  max-height: 108px;
+  color: white;
+}
+
+.customNameText{
+  font-weight: 400;
+  font-size: 58px;
+  line-height: 69.6px;
+  max-height: 70px;
+  max-width: 619px;
+  white-space: nowrap;
+  color: $purple;
+}
+
+.iconBox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-width: 1440px;
+  height: 20%;
+  background-color: blue;
+  @include dFlex($jc: start, $g: 40px);
+  >div{
+    border: 2px solid $purple;
+    width: 100px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+  >img{
+    width: 30px;
+    height: 29.26px;
+    cursor: pointer;
+    transition: transform .7s ease-in-out;
+    &:hover{
+      transform: scale(1.2);
+      transform: rotate(360deg);
+    }
+  }
+  >span{
+    color: white;
+    font-weight: 400px;
+    font-size: 23px;
+    line-height: 27.6px;
+  }
+}
+
+.backgroundShadow {
+  position: absolute;
+  top: 378px;
+  left: 0;
+  width: 100%;
+  // height: 100%;
+  object-fit: cover;
+  flex-shrink: 1;
+  z-index: 1;
+}
