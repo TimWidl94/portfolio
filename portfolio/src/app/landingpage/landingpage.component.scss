@@ -5,8 +5,8 @@ section {
   width: 100%;
   height: calc(100vh - 106px);
   flex-direction: column;
-  overflow: hidden;
-  overflow-y: hidden;
+  // overflow: hidden;
+  // overflow-y: hidden;
 }
 
 .mainContent {
@@ -20,29 +20,33 @@ section {
 
 .imgBox {
   @include dFlex();
-  background-color: green;
+  // background-color: green;
   width: 40%;
   max-width: 800px;
   > img {
     @include dFlex();
     object-fit: cover;
     width: 100%;
+    z-index: 1;
   }
 }
 
 .imgShadow {
-  position: relative;
-  top: 0;
-  left: -646px;
+  position: absolute;
+  top: 30px;
+  left: -100px;
+  z-index: 0 !important;
+  width: 60% !important;
 }
 
 .textBox {
   @include dFlex();
   width: 60%;
   height: 100%;
-  background-color: purple;
+  // background-color: purple;
   flex-direction: column;
   overflow: hidden;
+  z-index: 2;
   >div{
     @include dFlex();
     max-height: 172px;
@@ -91,11 +95,12 @@ section {
 
 .iconBox {
   position: absolute;
-  bottom: 0;
+  bottom: 20px;
   width: 100%;
   max-width: 1440px;
-  height: 20%;
-  background-color: blue;
+  // height: 20%;
+  // background-color: blue;
+  z-index: 2;
   @include dFlex($jc: start, $g: 40px);
   >div{
     border: 2px solid $purple;
@@ -123,11 +128,11 @@ section {
 
 .backgroundShadow {
   position: absolute;
-  top: 378px;
+  top: 600px;
   left: 0;
+  max-width: 100vw;
   width: 100%;
-  // height: 100%;
-  object-fit: cover;
-  flex-shrink: 1;
+  height: auto;
   z-index: 1;
+  overflow-y: hidden;
 }
