@@ -47,11 +47,11 @@ section {
   flex-direction: column;
   overflow: hidden;
   z-index: 2;
-  >div{
+  > div {
     @include dFlex();
     max-height: 172px;
     max-width: 718px;
-    >p{
+    > p {
       @include dFlex();
       font-size: 64px;
       line-height: 76.8px;
@@ -63,18 +63,18 @@ section {
       white-space: nowrap;
       margin: 0;
     }
-    >div{
+    > div {
       @include dFlex($ai: start);
       flex-direction: column;
     }
   }
-  >button{
+  > button {
     position: absolute;
     top: 513px;
   }
 }
 
-.nameText{
+.nameText {
   font-weight: 700;
   font-size: 90px;
   line-height: 108px;
@@ -83,7 +83,7 @@ section {
   color: white;
 }
 
-.customNameText{
+.customNameText {
   font-weight: 400;
   font-size: 58px;
   line-height: 69.6px;
@@ -102,23 +102,23 @@ section {
   // background-color: blue;
   z-index: 2;
   @include dFlex($jc: start, $g: 40px);
-  >div{
+  > div {
     border: 2px solid $purple;
     width: 100px;
     border-bottom-right-radius: 8px;
     border-top-right-radius: 8px;
   }
-  >img{
+  > img {
     width: 30px;
     height: 29.26px;
     cursor: pointer;
-    transition: transform .7s ease-in-out;
-    &:hover{
+    transition: transform 0.7s ease-in-out;
+    &:hover {
       transform: scale(1.2);
       transform: rotate(360deg);
     }
   }
-  >span{
+  > span {
     color: white;
     font-weight: 400px;
     font-size: 23px;
@@ -135,4 +135,29 @@ section {
   height: auto;
   z-index: 1;
   overflow-y: hidden;
+}
+
+.scrollDownBox {
+  position: absolute;
+  @include dFlex($jc: space-between);
+  bottom: 30px;
+  right: 20px;
+  z-index: 2;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 105px;
+  height: 100%;
+  transform: rotateY('angle');
+  > p {
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 27.6px;
+    color: white;
+    transform: rotate(90deg);
+    margin: 0;
+  }
+  > img {
+    width: 16px;
+    height: 16px;
+  }
 }

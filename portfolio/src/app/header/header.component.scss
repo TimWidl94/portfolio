@@ -23,7 +23,16 @@ header{
       &:hover{
         transition: ease-in-out 200ms;
         color: $blueText;
+        &::after{
+          content: '';
+          display: block;
+          height: 2px;
+          width: 40px;
+          background: $purple;
+          transition: ease-in-out 200ms;
+        }
       }
+
     }
   }
 
@@ -39,3 +48,4 @@ a{
   width: 150px;
   height: 28px;
 }
+
