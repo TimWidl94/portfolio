@@ -1,0 +1,65 @@
+@import "./../../styles.scss";
+
+section {
+  @include dFlex();
+  position: relative;
+  margin: 200px 0;
+  color: white;
+  width: 100%;
+  max-width: 1440px;
+}
+
+
+.skillIconBox {
+  @include dFlex($jc: start, $g: 123px);
+  width: 60%;
+  flex-wrap: wrap;
+  // flex-direction: column;
+  > div {
+    @include dFlex($g: 8px);
+    width: 88px;
+    height: 100px;
+    flex-direction: column;
+    > img {
+      width: 60px;
+      height: 60px;
+    }
+    > span {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 19.2px;
+      text-wrap: nowrap;
+    }
+  }
+}
+
+.skillTextBox {
+  @include dFlex($g: 32px);
+  width: 40%;
+  flex-direction: column;
+  max-width: 471px;
+
+  &:not(:last-child){
+    align-items: end;
+  }
+  > h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 108px;
+    width: 100%;
+    text-align: end;
+    &::after{
+      border: 2px solid $purple;
+      width: 80px;
+    }
+  }
+  > span{
+    display: flex;
+    text-align: end;
+  }
+  >button{
+    position: relative;
+    transform: translateX(42px);
+  }
+}

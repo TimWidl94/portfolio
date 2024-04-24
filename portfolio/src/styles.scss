@@ -92,12 +92,11 @@ body{
   background-color: $backgroundColor;
   font-family: $poppinsFont;
   margin: 0;
+  @include dFlex();
 }
 
 .blueButton{
   @include dFlex($g: 10px);
-  // width: 165px;
-  // height: 58px;
   border-radius: 10px;
   padding: 15px 30px;
   gap: 10px;

@@ -1,3 +1,4 @@
+import { MySkillsComponent } from './my-skills/my-skills.component';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
@@ -8,7 +9,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, LandingpageComponent, AboutMeComponent],
+  imports: [CommonModule, RouterOutlet, HeaderComponent, LandingpageComponent, AboutMeComponent, MySkillsComponent,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

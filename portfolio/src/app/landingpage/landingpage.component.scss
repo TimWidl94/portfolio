@@ -5,8 +5,7 @@ section {
   width: 100%;
   height: calc(100vh - 106px);
   flex-direction: column;
-  // overflow: hidden;
-  // overflow-y: hidden;
+  overflow: hidden;
 }
 
 .mainContent {
@@ -165,20 +164,26 @@ section {
 
 @keyframes scrollTop {
   0% {
-    transform: translateY(0px)
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(20px)
+    transform: translateY(20px);
   }
   100% {
-    transform: translateY(0px)
+    transform: translateY(0px);
   }
 }
 
-.purpleAboutMeShadow{
+.purpleAboutMeShadow {
   position: absolute;
-  right: -450px;
-  overflow: hidden;
-  bottom: -450px;
+  right: 0;
+  bottom: -650px;
   z-index: 2;
+  width: 300px;
+  >img{
+    object-fit: cover;
+    width: 100%;
+    height: auto;
+  }
+
 }
