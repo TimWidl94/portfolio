@@ -23,11 +23,11 @@ section {
       font-weight: 700;
       font-size: 90px;
       line-height: 108px;
-      color: white;
+      color: $textColor;
     }
     > span {
       max-width: 471px;
-      color: white;
+      color: $textColor;
       font-weight: 400;
       font-size: 16px;
       line-height: 19.2px;
@@ -54,7 +54,7 @@ section {
       @include dFlex();
       max-width: 359px;
       max-height: 76px;
-      color: white;
+      color: $textColor;
       font-weight: 400;
       font-size: 16px;
       line-height: 19.2px;
