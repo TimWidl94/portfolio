@@ -73,7 +73,16 @@ section {
 
 .skillShadowLeft{
   position: absolute;
-  left: -450px;
+  // width: 250px;
+  // height: 100%;
+  left: 0;
   bottom: -300px;
-  rotate: 56deg;
+
+  // overflow: hidden;
+  >img{
+    object-fit: cover;
+    object-position: right;
+    // rotate: 56deg;
+
+  }
 }

@@ -94,6 +94,7 @@ body{
   font-family: $poppinsFont;
   margin: 0;
   @include dFlex();
+  width: 100%;
 }
 
 .blueButton{

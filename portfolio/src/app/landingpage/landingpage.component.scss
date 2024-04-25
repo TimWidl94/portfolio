@@ -175,8 +175,13 @@ section {
 }
 
 .purpleAboutMeShadow {
+  width: 250px;
   position: absolute;
-  right: -450px;
+  right: 0;
   bottom: -650px;
   z-index: 2;
+  overflow: hidden;
+  > img {
+    object-fit: cover;
+  }
 }
