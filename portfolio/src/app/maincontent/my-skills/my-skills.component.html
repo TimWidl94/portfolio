@@ -1,0 +1,22 @@
+<section>
+  <div>
+    <div class="skillIconBox">
+      <div *ngFor="let icon of skillIcons; let i = index">
+        <img src="assets/img/icons/{{ icon }}" alt="" />
+        <span>{{ skillNames[i] }}</span>
+      </div>
+    </div>
+    <div class="skillTextBox">
+      <h2>My skills</h2>
+      <span
+        >I have grown my frontend developments skills that have allowed me to
+        create different real projects.</span
+      >
+
+      <button class="blueButton">Get in touch</button>
+    </div>
+  </div>
+  <div class="skillShadowLeft">
+    <img src="assets/img/shadows/skillShadowLeft.svg" alt="" />
+  </div>
+</section>

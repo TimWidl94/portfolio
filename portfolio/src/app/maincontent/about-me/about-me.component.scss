@@ -1,7 +1,7 @@
-@import "./../../styles.scss";
+@import "./../../../styles.scss";
 
 section {
-  @include dFlex($ai: start, $jc: space-between);
+  @include dFlex($ai: start);
   width: 100%;
   height: 100%;
   position: relative;
@@ -9,34 +9,38 @@ section {
   overflow: hidden;
   margin-top: 150px;
   gap: 100px;
-  max-width: 1440px;
   > div {
-    @include dFlex();
-    &:not(:last-child) {
-      flex-direction: column;
-      gap: 35px;
-      margin-left: 80px;
-    }
+    @include dFlex($jc: space-between);
+    width: 100%;
+    max-width: 1440px;
+    > div {
+      @include dFlex();
+      &:not(:last-child) {
+        flex-direction: column;
+        gap: 35px;
+        margin-left: 80px;
+      }
 
-    > h2 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 90px;
-      line-height: 108px;
-      color: $textColor;
-    }
-    > span {
-      max-width: 471px;
-      color: $textColor;
-      font-weight: 400;
-      font-size: 16px;
-      line-height: 19.2px;
+      > h2 {
+        margin: 0;
+        font-weight: 700;
+        font-size: 90px;
+        line-height: 108px;
+        color: $textColor;
+      }
+      > span {
+        max-width: 471px;
+        color: $textColor;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19.2px;
+      }
     }
   }
 }
 
 .aboutMeContentBox {
-  @include dFlex($g:35px);
+  @include dFlex($g: 35px);
   flex-direction: column;
 
   > div {
@@ -46,8 +50,8 @@ section {
       height: 50px;
       padding: 0 2px;
       gap: 10px;
-      &:hover{
-        transform: scale(1.2)
+      &:hover {
+        transform: scale(1.2);
       }
     }
     > span {
@@ -69,7 +73,7 @@ section {
   height: 453px;
   border: 3px solid $blueText;
   border-radius: 50%;
-  background-image: url(./../../assets/img/mePictures/aboutMePicture.png);
+  background-image: url(./../../../assets/img/mePictures/aboutMePicture.png);
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;

@@ -1,4 +1,4 @@
-@import "./../../styles.scss";
+@import "./../../../styles.scss";
 
 section {
   @include dFlex();
@@ -6,6 +6,14 @@ section {
   height: calc(100vh - 106px);
   flex-direction: column;
   overflow: hidden;
+  >div{
+
+  }
+}
+
+.main{
+  @include dFlex();
+  width: 100%;
   max-width: 1440px;
 }
 
@@ -97,9 +105,6 @@ section {
   position: absolute;
   bottom: 20px;
   width: 100%;
-  max-width: 1440px;
-  // height: 20%;
-  // background-color: blue;
   z-index: 2;
   @include dFlex($jc: start, $g: 40px);
   > div {
@@ -145,7 +150,7 @@ section {
   flex-direction: column;
   gap: 8px;
   max-height: 105px;
-  height: 100%;
+  height: 100px;
   animation: scrollTop 1.5s ease-in-out;
   animation-iteration-count: infinite;
   > p {

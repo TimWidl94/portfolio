@@ -1,0 +1,20 @@
+<section>
+  <div class="headlineBox">
+    <h1>Portfolio</h1>
+    <span>{{ exploreHtml }}</span>
+  </div>
+  <div class="projectsBox" *ngFor="let project of projects;">
+    <div>
+      <img [src]="project.projectImg" alt="" />
+      <div>
+        <h3>{{ project["projectName"] }}</h3>
+        <h4></h4>
+        <span></span>
+        <div>
+          <button>Live test</button>
+          <button>Github</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

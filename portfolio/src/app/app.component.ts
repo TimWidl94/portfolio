@@ -1,16 +1,13 @@
-import { MySkillsComponent } from './my-skills/my-skills.component';
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { HeaderComponent } from './header/header.component';
-import { LandingpageComponent } from './landingpage/landingpage.component';
-import { AboutMeComponent } from './about-me/about-me.component';
-import { ProjektsComponent } from './projekts/projekts.component';
+import { MaincontentComponent } from './maincontent/maincontent.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, HeaderComponent, LandingpageComponent, AboutMeComponent, MySkillsComponent, ProjektsComponent,],
+  imports: [CommonModule, RouterOutlet, MaincontentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

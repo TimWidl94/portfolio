@@ -1,12 +1,16 @@
-@import "./../../styles.scss";
+@import "./../../../styles.scss";
 
 section {
-  @include dFlex($jc: space-between);
+  @include dFlex();
   position: relative;
   margin: 200px 0;
   color: white;
-  width: 100%;
-  max-width: 1440px;
+  width: 99vw;
+
+  >div:not(:last-child){
+    @include dFlex($jc: space-between);
+    max-width: 1440px;
+  }
 }
 
 .skillIconBox {
@@ -66,7 +70,7 @@ section {
     @include dFlex();
     position: absolute;
     top: 220px;
-    transform: translateX(-100px);
+    transform: translateX(40px);
   }
 }
 
@@ -74,9 +78,10 @@ section {
 .skillShadowLeft{
   position: absolute;
   // width: 250px;
-  // height: 100%;
+  height: 80%;
   left: 0;
-  bottom: -300px;
+  // bottom: -300px;
+  // width: 100%;
 
   // overflow: hidden;
   >img{

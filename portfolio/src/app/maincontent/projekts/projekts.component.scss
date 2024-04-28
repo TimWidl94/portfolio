@@ -1,0 +1,50 @@
+@import "./../../../styles.scss";
+
+section {
+  @include dFlex();
+  flex-direction: column;
+  max-width: 1440px;
+  width: 100%
+}
+
+.headlineBox {
+  @include dFlex();
+  flex-direction: column;
+  > h1 {
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 108px;
+    color: $textColor;
+    margin: 0;
+    margin-bottom: 20px;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 100px;
+      border: 2px solid $purple;
+      transform: translateY(-50%);
+    }
+  }
+  > span {
+    color: $textColor;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+}
+
+.projectsBox {
+  @include dFlex();
+  flex-direction: column;
+  > div {
+    @include dFlex();
+    > img {
+      width: 200px;
+      height: 200px;
+    }
+    > div {
+      @include dFlex();
+      color: white;
+    }
+  }
+}
