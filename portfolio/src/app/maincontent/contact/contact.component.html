@@ -1,1 +1,37 @@
-<p>contact works!</p>
+<section>
+  <h2>Contact</h2>
+  <div class="main">
+    <div class="leftContentBox">
+      <h3>Got a problem to solve?</h3>
+      <span
+        >Contact me trough this form, I am interestet in hearing from you,
+        knowing your ideas and contributing to your projects with my work.</span
+      >
+      <span>Need a Frontend developer? <b> Contact me! </b></span>
+    </div>
+    <div class="rightContentBox">
+      <form (ngSubmit)="onSubmit()">
+        <input [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" type="text" placeholder="Your name" />
+        <input [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" type="email" placeholder="Your email" />
+        <textarea [(ngModel)]="contactData.message" [ngModelOptions]="{standalone: true}"
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Your message"
+          style="height: 202px"
+        ></textarea>
+        <div class="checkboxContainer">
+          <input type="checkbox" />
+          <p>
+            I've read the <a href="">privacy policy</a> and agree to the
+            processing of my data as outlined.
+          </p>
+        </div>
+        <button>Send message :)</button>
+      </form>
+
+    </div>
+  </div>
+  <!-- <button class="arrowImg"><img src="" alt="arrowImg" /></button> -->
+</section>

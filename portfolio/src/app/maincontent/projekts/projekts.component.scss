@@ -3,26 +3,43 @@
 section {
   @include dFlex();
   flex-direction: column;
-  max-width: 1440px;
-  width: 100%
+  margin-bottom: 150px;
+  width: 100%;
+  > div {
+    max-width: 1440px;
+    width: 100%;
+  }
 }
 
 .headlineBox {
   @include dFlex();
   flex-direction: column;
-  > h1 {
-    font-weight: 700;
-    font-size: 90px;
-    line-height: 108px;
-    color: $textColor;
-    margin: 0;
-    margin-bottom: 20px;
+  margin-bottom: 140px;
+  > div {
+    @include dFlex();
+    width: 100%;
+    gap: 32px;
+    > h1 {
+      font-weight: 700;
+      font-size: 90px;
+      line-height: 108px;
+      color: $textColor;
+      margin: 0;
+      margin-bottom: 20px;
+    }
     &::before {
       content: "";
       display: inline-block;
-      width: 100px;
-      border: 2px solid $purple;
-      transform: translateY(-50%);
+      height: 4px;
+      background: linear-gradient(to left, $purple 0px 100px, #0000 100px 100%);
+      flex: 1;
+    }
+    &::after {
+      content: "";
+      display: inline-block;
+      height: 4px;
+      background-color: $purple;
+      flex: 1;
     }
   }
   > span {
@@ -36,15 +53,55 @@ section {
 .projectsBox {
   @include dFlex();
   flex-direction: column;
+}
+
+.project {
+  @include dFlex();
+  // max-width: 1168px;
+  width: 100%;
+  z-index: 1;
   > div {
-    @include dFlex();
+    @include dFlex($ai: start);
+    flex-direction: column;
+    color: white;
     > img {
-      width: 200px;
-      height: 200px;
+      scale: 0.8;
     }
-    > div {
-      @include dFlex();
-      color: white;
+    > h3 {
+      color: $purple;
+      margin: 12px 0;
+      font-weight: 700;
+      font-size: 32px;
+      line-height: 38.4px;
     }
+    > h4 {
+      color: $blueText;
+      margin: 8px 0;
+      font-weight: 400;
+      font-size: 23px;
+      line-height: 27.6px;
+    }
+  }
+}
+
+.buttonBox {
+  @include dFlex($jc: space-between);
+  width: 375px;
+  margin-top: 20px;
+}
+
+.flex-direction {
+  flex-direction: row-reverse;
+}
+
+.shadowBox {
+  position: absolute;
+  transform: rotate(180deg);
+  z-index: 0;
+  right: 0;
+  overflow: hidden;
+  >img{
+    position: relative;
+    right: 250px;;
   }
 }

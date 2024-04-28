@@ -1,20 +1,38 @@
 <section>
-  <div class="headlineBox">
-    <h1>Portfolio</h1>
-    <span>{{ exploreHtml }}</span>
-  </div>
-  <div class="projectsBox" *ngFor="let project of projects;">
-    <div>
-      <img [src]="project.projectImg" alt="" />
+  <div>
+    <div class="headlineBox">
       <div>
-        <h3>{{ project["projectName"] }}</h3>
-        <h4></h4>
-        <span></span>
+        <h1>Portfolio</h1>
+      </div>
+      <span>{{ exploreHtml }}</span>
+    </div>
+    <div class="projectsBox">
+      <div
+        class="project"
+        *ngFor="let project of projects; let i = index"
+        [ngStyle]="{ 'flex-direction': i % 2 === 0 ? 'row' : 'row-reverse' }"
+      >
         <div>
-          <button>Live test</button>
-          <button>Github</button>
+          <img [src]="project.projectImg" alt="" />
+        </div>
+        <div>
+          <h3>{{ project["projectName"] }}</h3>
+          <h4>{{ project["projectTechnologie"] }}</h4>
+          <span>{{ project["projectDescription"] }}</span>
+          <div class="buttonBox">
+            <a href="" class="purpleButton">Live test</a>
+            <a
+              href="{{ project.projectGitHub }}"
+              target="_blank"
+              class="transparentButton"
+              >Github</a
+            >
+          </div>
         </div>
       </div>
     </div>
+  </div>
+  <div class="shadowBox">
+    <img src="assets/img/shadows/projectsShadow.svg" alt="" />
   </div>
 </section>

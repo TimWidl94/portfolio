@@ -5,7 +5,7 @@ section {
   position: relative;
   margin: 200px 0;
   color: white;
-  width: 99vw;
+  width: 100vw;
 
   >div:not(:last-child){
     @include dFlex($jc: space-between);

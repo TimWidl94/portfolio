@@ -106,6 +106,7 @@ section {
   bottom: 20px;
   width: 100%;
   z-index: 2;
+  max-width: 1440px;
   @include dFlex($jc: start, $g: 40px);
   > div {
     border: 2px solid $purple;

@@ -6,6 +6,7 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { MySkillsComponent } from './my-skills/my-skills.component';
 import { ProjektsComponent } from './projekts/projekts.component';
+import { ContactComponent } from './contact/contact.component';
 
 @Component({
   selector: 'app-maincontent',
@@ -18,6 +19,7 @@ import { ProjektsComponent } from './projekts/projekts.component';
     AboutMeComponent,
     MySkillsComponent,
     ProjektsComponent,
+    ContactComponent,
   ],
   templateUrl: './maincontent.component.html',
   styleUrl: './maincontent.component.scss',

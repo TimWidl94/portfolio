@@ -95,6 +95,11 @@ body{
   margin: 0;
   @include dFlex();
   width: 100%;
+  // overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+  display: none;
 }
 
 .blueButton{
@@ -107,6 +112,7 @@ body{
   font-weight: 400;
   font-size: 23px;
   border: none;
+  text-decoration: none;
   cursor: pointer;
   &:hover {
     background-color: #4B47FF;
@@ -114,3 +120,40 @@ body{
     transition: ease-in-out 100ms;
   }
 }
+
+.purpleButton{
+  @include dFlex($g: 10px);
+  border-radius: 10px;
+  padding: 15px 30px;
+  gap: 10px;
+  background-color: $purple;
+  color: white;
+  font-weight: 400;
+  font-size: 23px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $blueText;
+    transition: ease-in-out 100ms;
+  }
+}
+
+.transparentButton{
+  @include dFlex($g: 10px);
+  border-radius: 10px;
+  padding: 15px 30px;
+  gap: 10px;
+  background-color: transparent;
+  color: white;
+  font-weight: 400;
+  font-size: 23px;
+  border: 1px solid $blueText;
+  text-decoration: none;
+  cursor: pointer;
+  &:hover {
+    background-color: $blueText;
+    transition: ease-in-out 100ms;
+  }
+}
+
