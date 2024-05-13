@@ -5,19 +5,35 @@ section {
   color: white;
   width: 100%;
   flex-direction: column;
-  > h2 {
-    margin: 0;
-    font-weight: 700;
-    font-size: 90px;
-    line-height: 108px;
-    margin-bottom: 40px;
-  }
-  > div {
-    @include dFlex();
-    max-width: 1440px;
+  > div:not(:last-child) {
+    @include dFlex($jc: start);
     width: 100%;
-    height: 600px;
+    max-width: 1440px;
+    margin-bottom: 40px;
+    gap: 24px;
+    > div {
+      border: 2px solid $purple;
+      width: 80px;
+      border-bottom-right-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+    > h2 {
+      margin: 0;
+      font-weight: 700;
+      font-size: 90px;
+      line-height: 108px;
+      width: 100%;
+    }
   }
+}
+
+.main {
+  @include dFlex();
+  max-width: 1440px;
+  width: 100%;
+  height: 600px;
+  margin-bottom: 80px;
+  position: relative;
 }
 
 .leftContentBox {
@@ -41,56 +57,178 @@ section {
   > form {
     @include dFlex();
     flex-direction: column;
-    gap: 32px;
-    > input, textarea{
-      max-width: 617px;
-      width: 100%;
-      // height: 50px;
-      border: 1px solid $purple;
-      border-radius: 10px;
-      background-color: transparent;
-      color: white;
-      padding: 15px 25px;
-      font-family: 'poppins';
-      &:focus {
-        border: 1px solid $purple !important;
-      }
-      &::-webkit-input-placeholder {
-        color: white;
-      }
-
-      &::-moz-placeholder {
-        color: white;
-      }
-
-      &::-ms-placeholder {
-        color: white;
-      }
-
-      &::placeholder {
-        color: white;
-      }
-    }
+    gap: 16px;
+    max-width: 667px;
+    width: 100%;
   }
 }
 
 .checkboxContainer {
   @include dFlex();
-  > input {
+  flex-direction: column;
+  width: 100%;
+  position: relative;
+  > div {
+    @include dFlex();
+    width: 100%;
+    > label {
+      width: 100%;
+      > div {
+        position: absolute;
+        left: 0px;
+        width: 26px;
+        height: 26px;
+      }
+      > p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 16.8px;
+        margin: 0;
+      }
+    }
   }
-  > p {
+  > span {
+    @include dFlex($jc: start);
+    width: 100%;
+    color: $error;
     font-weight: 400;
     font-size: 14px;
     line-height: 16.8px;
-    margin: 0;
   }
 }
 
-a {
+.hoverPrivatPolicy:hover {
+  background-color: rgba(0, 190, 232, 0.2);
+  border-radius: 50%;
+}
+
+.checkBoxHovered {
+  background-color: rgba(0, 190, 232, 0.2);
+  border-radius: 50%;
 }
 
 .arrowImg {
   position: absolute;
   right: 5px;
   bottom: 0;
+  background-color: transparent;
+  border: none;
+  background-image: url(./../../../assets/img/icons/goUpArrowIcon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  &:hover{
+    cursor: pointer;
+    background-image: url(./../../../assets/img/icons/goUpArrowIconHover.svg);
+  }
+}
+
+.submitButton {
+  width: 253px;
+  height: 58px;
+  border-radius: 10px;
+}
+
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: white !important;
+}
+
+.inputError {
+  border-color: $error !important;
+}
+
+.inputCorrect {
+  border-color: $accepted !important;
+}
+
+.inputTouched {
+  margin-bottom: 20px;
+}
+
+.privatPolicyLabel {
+  @include dFlex($g: 8px, $jc: start);
+  width: 100%;
+  padding-left: 32px;
+  margin-bottom: 12px;
+  > div {
+    @include dFlex();
+    > img:hover {
+      cursor: pointer;
+    }
+  }
+  > p {
+    > a {
+      text-decoration: none;
+    }
+  }
+}
+
+.placeholderContainer {
+  width: 100%;
+  height: 12px;
+}
+
+.labelContainer {
+  @include dFlex();
+}
+
+.inputContainer {
+  @include dFlex();
+  width: 100%;
+  flex-direction: column;
+  position: relative;
+  > input,
+  textarea {
+    max-width: 617px;
+    width: 100%;
+    border: 1px solid $purple;
+    border-radius: 10px;
+    background-color: transparent;
+    color: white;
+    padding: 15px 25px;
+    font-family: "poppins";
+    margin-bottom: 8px;
+    &:focus {
+      outline: none;
+      // border: 1px solid $purple !important;
+    }
+    &::-webkit-input-placeholder {
+      color: white;
+    }
+
+    &::-moz-placeholder {
+      color: white;
+    }
+
+    &::-ms-placeholder {
+      color: white;
+    }
+
+    &::placeholder {
+      color: white;
+    }
+  }
+  > span {
+    @include dFlex($jc: start);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.8px;
+    color: $error;
+    width: 100%;
+    transition: ease-in-out 2000ms;
+  }
+  > label {
+    position: absolute;
+    top: 14px;
+    right: 20px;
+  }
+}
+
+.shadowBackground {
+  @include dFlex();
+  position: absolute;
+  left: -100px;
+  bottom: -350px;
 }

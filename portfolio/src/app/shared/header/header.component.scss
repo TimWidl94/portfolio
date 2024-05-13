@@ -1,0 +1,122 @@
+@import "./../../../styles.scss";
+
+header {
+  // position: absolute;
+  // left: 0;
+  // right: 0;
+  // top: 0;
+  background-color: #141d2f;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  max-height: 32px;
+  height: 100%;
+  padding: 36px 100px;
+  width: 100vw;
+  max-width: calc(100vw - 200px);
+  > div {
+    @include dFlex($jc: space-between);
+    width: 100%;
+    max-width: 1440px;
+  }
+}
+
+.headlineMenu{
+@include dFlex($jc: space-between, $g: 29px);
+      width: 100%;
+      max-width: 324px;
+      max-height: 32px;
+      height: 100%;
+}
+
+a {
+  font-style: none;
+  color: $textColor;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 23px;
+  &:hover {
+    transition: ease-in-out 200ms;
+    color: $blueText;
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 40px;
+      background: $purple;
+      transition: ease-in-out 200ms;
+    }
+  }
+}
+
+.nameLogo {
+  width: 150px;
+  height: 28px;
+}
+
+.burgerMenu {
+  @include dFlex();
+  width: 32px;
+  height: 32px;
+  background-image: url(./../../../assets/img/icons/burgerMenuOpen.svg);
+  cursor: pointer;
+}
+
+.burgerMenuOpen {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100px;
+  bottom: 0;
+  background-color: #414856;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 999;
+  > a {
+    color: white;
+    font-weight: 400;
+    font-size: 23px;
+    line-height: 27.6px;
+    width: 150px;
+    height: 40px;
+  }
+}
+
+.burgerMenuCloseIcon{
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-image: url(./../../../assets/img/icons/burgerMenuClose.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.displayFlex {
+  display: flex !important;
+}
+
+@media (min-width: 1200px) {
+  .burgerMenu {
+    display: none;
+  }
+  .burgerMenuCloseIcon{
+    display: flex;
+  }
+}
+
+@media (max-width: 1200px) {
+  .headlineMenu {
+    display: none !important;
+  }
+
+
+}

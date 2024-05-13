@@ -1,5 +1,8 @@
 <section>
-  <h2>Contact</h2>
+  <div>
+    <div></div>
+    <h2>Contact</h2>
+  </div>
   <div class="main">
     <div class="leftContentBox">
       <h3>Got a problem to solve?</h3>
@@ -10,28 +13,141 @@
       <span>Need a Frontend developer? <b> Contact me! </b></span>
     </div>
     <div class="rightContentBox">
-      <form (ngSubmit)="onSubmit()">
-        <input [(ngModel)]="contactData.name" [ngModelOptions]="{standalone: true}" type="text" placeholder="Your name" />
-        <input [(ngModel)]="contactData.email" [ngModelOptions]="{standalone: true}" type="email" placeholder="Your email" />
-        <textarea [(ngModel)]="contactData.message" [ngModelOptions]="{standalone: true}"
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Your message"
-          style="height: 202px"
-        ></textarea>
-        <div class="checkboxContainer">
-          <input type="checkbox" />
-          <p>
-            I've read the <a href="">privacy policy</a> and agree to the
-            processing of my data as outlined.
-          </p>
+      <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm">
+        <div class="inputContainer">
+          <input
+            #name="ngModel"
+            required
+            [(ngModel)]="contactData.name"
+            name="name"
+            type="text"
+            placeholder="Your name"
+            [class.inputError]="!name.valid && name.touched"
+            [class.inputCorrect]="(name.valid && name.touched) || name.valid"
+            [class.inputTouched]="!name.touched || (name.touched && name.valid)"
+          />
+          <label *ngIf="name.valid" for="#name">
+            <img src="assets/img/icons/correctIcon.svg" alt="" />
+          </label>
+          <label *ngIf="!name.valid && name.touched" for="#name">
+            <img src="assets/img/icons/incorrectIcon.svg" alt="" />
+          </label>
+          <span
+            *ngIf="!name.valid && name.touched"
+            [@fadeIn]="!name.valid && name.touched"
+            >Your name is required</span
+          >
         </div>
-        <button>Send message :)</button>
+        <div class="inputContainer">
+          <input
+            #email="ngModel"
+            [(ngModel)]="contactData.email"
+            name="email"
+            type="email"
+            placeholder="Your email"
+            required
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            [class.inputError]="!email.valid && email.touched"
+            [class.inputCorrect]="(email.valid && email.touched) || email.valid"
+            [class.inputTouched]="
+              !email.touched || (email.touched && email.valid)
+            "
+          />
+          <label *ngIf="email.valid" for="#email">
+            <img src="assets/img/icons/correctIcon.svg" alt="" />
+          </label>
+          <label *ngIf="!email.valid && email.touched" for="#email">
+            <img src="assets/img/icons/incorrectIcon.svg" alt="" />
+          </label>
+          <span
+            *ngIf="!email.valid && email.touched"
+            [@fadeInOut]="!email.valid && email.touched"
+          >
+            Your email is required
+          </span>
+        </div>
+        <div class="inputContainer">
+          <textarea
+            #message="ngModel"
+            [(ngModel)]="contactData.message"
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Your message"
+            style="height: 202px"
+            required
+            minlength="4"
+            [class.inputError]="!message.valid && message.touched"
+            [class.inputCorrect]="message.valid"
+            [class.inputTouched]="
+              !message.touched || (message.touched && message.valid)
+            "
+          ></textarea>
+          <label *ngIf="message.valid" for="#message">
+            <img src="assets/img/icons/correctIcon.svg" alt="" />
+          </label>
+          <label *ngIf="!message.valid && message.touched" for="#message">
+            <img src="assets/img/icons/incorrectIcon.svg" alt="" />
+          </label>
+          <span
+            *ngIf="!message.valid && message.touched"
+            [@fadeInOut]="!message.valid && message.touched"
+            >Your message is empty</span
+          >
+        </div>
+        <div class="checkboxContainer">
+          <div>
+            <input
+              type="checkbox"
+              [(ngModel)]="privatPolicy"
+              name="privatPolicy"
+              id="privatPolicy"
+              style="display: none"
+              (click)="setAlreadyChecked()"
+            />
+            <label class="privatPolicyLabel" for="privatPolicy">
+              <div
+                id="checkboxBackground"
+                class="hoverPrivatPolicy checkboxBackground"
+              >
+                <img
+                  *ngIf="!privatPolicy"
+                  [@fadeIn]="!privatPolicy"
+                  src="assets/img/icons/checkboxUncheckedIcon.svg"
+                  alt="checkboxUncheckedIcon"
+                />
+                <img
+                  *ngIf="privatPolicy"
+                  [@fadeIn]="privatPolicy"
+                  src="assets/img/icons/checkboxCheckedIcon.svg"
+                  alt="checkboxUncheckedIcon"
+                />
+              </div>
+              <p>
+                I've read the
+                <a href="" id="privatPolicyLink">privacy policy</a> and agree to
+                the processing of my data as outlined.
+              </p>
+            </label>
+          </div>
+          <span
+            *ngIf="alreadyChecked && !privatPolicy"
+            [@fadeInOut]="!privatPolicy"
+          >
+            Please accept the privacy policy
+          </span>
+        </div>
+        <div>
+          <button class="blueButton" [disabled]="!isFormValid(contactForm)">
+            Send message :)
+          </button>
+        </div>
       </form>
-
+    </div>
+    <button class="arrowImg"></button>
+    <div class="shadowBackground">
+      <img src="assets/img/shadows/contactShadow.svg" alt="" />
     </div>
   </div>
-  <!-- <button class="arrowImg"><img src="" alt="arrowImg" /></button> -->
 </section>

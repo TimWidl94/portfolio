@@ -1,36 +1,36 @@
 @import "./../../../styles.scss";
 
 section {
-  @include dFlex();
+  @include dFlex($jc: start);
   width: 100%;
   height: calc(100vh - 106px);
   flex-direction: column;
   overflow: hidden;
-  >div{
-
-  }
 }
 
-.main{
-  @include dFlex();
-  width: 100%;
+.main {
+  @include dFlex($ai: start);
+  // width: 100%;
   max-width: 1440px;
+  // height: 100%;
 }
 
 .mainContent {
   @include dFlex($ai: normal);
   width: 100%;
   max-width: 1440px;
-  height: 80%;
-  position: absolute;
+  // height: 80%;
+  // position: absolute;
   top: 106px;
 }
 
 .imgBox {
   @include dFlex();
-  // background-color: green;
   width: 40%;
   max-width: 800px;
+  position: relative;
+  justify-content: center;
+  align-items: start;
   > img {
     @include dFlex();
     object-fit: cover;
@@ -41,45 +41,47 @@ section {
 
 .imgShadow {
   position: absolute;
-  top: 30px;
-  left: -100px;
+  top: 100px;
+  scale: 1.3;
   z-index: 0 !important;
-  width: 60% !important;
+
 }
 
 .textBox {
   @include dFlex();
   width: 60%;
-  height: 100%;
+  // height: 100%;
   // background-color: purple;
   flex-direction: column;
   overflow: hidden;
   z-index: 2;
+  position: relative;
   > div {
     @include dFlex();
     max-height: 172px;
     max-width: 718px;
-    > p {
-      @include dFlex();
-      font-size: 64px;
-      line-height: 76.8px;
-      font-weight: 400;
-      max-width: 152px;
-      max-height: 63px;
-      transform: rotate(270deg);
-      color: white;
-      white-space: nowrap;
-      margin: 0;
-    }
     > div {
       @include dFlex($ai: start);
       flex-direction: column;
     }
   }
   > button {
-    position: absolute;
-    top: 513px;
+    position: relative;
+    top: 20px;
   }
+}
+
+.sideText {
+  @include dFlex();
+  font-size: 64px;
+  line-height: 76.8px;
+  font-weight: 400;
+  max-width: 152px;
+  max-height: 63px;
+  transform: rotate(270deg);
+  color: white;
+  white-space: nowrap;
+  margin: 0;
 }
 
 .nameText {
@@ -102,11 +104,12 @@ section {
 }
 
 .iconBox {
-  position: absolute;
+  // position: absolute;
   bottom: 20px;
   width: 100%;
   z-index: 2;
   max-width: 1440px;
+  height: 34px;
   @include dFlex($jc: start, $g: 40px);
   > div {
     border: 2px solid $purple;
@@ -131,20 +134,24 @@ section {
   }
 }
 
-.backgroundShadow {
+.backgroundShadowBox {
   position: absolute;
   top: 600px;
   left: 0;
+  right: 0;
   max-width: 100vw;
-  width: 100%;
+  width: 100vw;
   height: auto;
   z-index: 1;
   overflow-y: hidden;
+  > img {
+    width: 100%;
+  }
 }
 
 .scrollDownBox {
-  position: absolute;
   @include dFlex($jc: space-between);
+  position: absolute;
   bottom: 30px;
   right: 20px;
   z-index: 3;
@@ -189,5 +196,167 @@ section {
   overflow: hidden;
   > img {
     object-fit: cover;
+  }
+}
+
+@media (min-width: 1200px) {
+  .iconBox {
+    position: absolute;
+  }
+}
+
+@media (max-width: 1200px) {
+  section{
+    height: unset;
+  }
+  .main {
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+  }
+  .mainContent {
+    flex-direction: column;
+  }
+  .mainContent {
+    justify-content: center;
+    align-items: center;
+  }
+  .scrollDownBox {
+    display: none;
+  }
+  .textBox {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .backgroundShadowBox {
+    top: 500px;
+  }
+  .nameText {
+    font-size: 76px;
+    line-height: 84px;
+  }
+  .customNameText {
+    font-size: 44px;
+    line-height: 50px;
+  }
+  .sideText {
+    font-size: 50px;
+    line-height: 62px;
+  }
+  .imgBox{
+   height: 550px;
+  }
+  .textBox{
+    overflow: visible;
+    justify-content: start;
+    height: 220px;
+  }
+  .imgShadow{
+    scale: 1.5;
+  }
+}
+
+@media (max-width: 1100px) {
+
+  .nameText {
+    font-size: 76px;
+    line-height: 84px;
+  }
+  .customNameText {
+    font-size: 44px;
+    line-height: 50px;
+  }
+  .sideText {
+    font-size: 50px;
+    line-height: 62px;
+  }
+}
+
+@media (max-width: 900px) {
+  .backgroundShadowBox {
+    top: 400px;
+  }
+  .imgShadow {
+    top: 120px;
+    scale: 1.8;
+  }
+  .imgBox{
+    height: 450px;
+  }
+}
+
+
+@media (max-width: 700px) {
+  .backgroundShadowBox {
+    top: 350px;
+  }
+  .nameText {
+    font-size: 56px;
+    line-height: 64px;
+  }
+  .customNameText {
+    font-size: 24px;
+    line-height: 30px;
+  }
+  .sideText {
+    font-size: 30px;
+    line-height: 42px;
+  }
+  .blueButton{
+    font-size: 16px;
+    // padding: 10px 20px;
+  }
+  .email{
+    display: none;
+  }
+  .imgBox{
+    height: 350px;
+  }
+  .textBox{
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 550px) {
+  .backgroundShadowBox {
+    top: 300px;
+  }
+  .imgShadow{
+   top: 80px;
+  }
+  .imgBox{
+    height: 300px;
+  }
+}
+
+@media (max-width: 450px) {
+  .backgroundShadowBox {
+    top: 280px;
+  }
+  // .nameText {
+    // font-size: 46px;
+    // line-height: 54px;
+  // }
+  // .customNameText {
+    // font-size: 24px;
+    // line-height: 32px;
+  // }
+  // .sideText {
+    // font-size: 20px;
+    // line-height: 32px;
+  // }
+  .imgBox{
+    height: 250px;
+  }
+}
+
+@media (max-width: 370px) {
+  .backgroundShadowBox {
+    top: 250px;
+  }
+  .iconBox{
+    >div{
+      width: 50px;
+    }
   }
 }
