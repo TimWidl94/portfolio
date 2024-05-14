@@ -117,6 +117,12 @@ a {
   .headlineMenu {
     display: none !important;
   }
+}
 
-
+@media (max-width: 700px){
+header{
+  width: calc(100% - 40px);
+  max-width: unset;
+  padding: 36px 20px;
+}
 }

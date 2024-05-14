@@ -102,6 +102,18 @@ section {
     justify-content: center !important;
     >div{
       margin: 0 16px!important;
+      width: 100%;
+      align-items: start !important;
+      >h2{
+      }
+      >span{
+        max-width: 800px !important;
+      }
+      >div{
+        >div{
+          justify-content: start;
+        }
+      }
     }
   }
 }
