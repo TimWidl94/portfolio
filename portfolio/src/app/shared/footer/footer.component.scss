@@ -1,0 +1,68 @@
+@import "./../../../styles.scss";
+
+section {
+  @include dFlex();
+  border-top: 2px solid $blueText;
+}
+
+.main {
+  @include dFlex();
+  flex-direction: column;
+  width: 100%;
+  max-width: 1440px;
+  padding: 50px 0;
+  > div {
+    @include dFlex($jc: space-between);
+    width: 100%;
+    >img{
+      width: 200px;
+      height: 50px;
+    }
+    > span {
+      color: white;
+      font-size: 23px;
+      line-height: 27.6px;
+    }
+    > div {
+      @include dFlex($jc: space-between, $g: 40px);
+    }
+  }
+}
+
+.icon {
+  width: 30px;
+  height: 29.26px;
+  cursor: pointer;
+  transition: transform 0.7s ease-in-out;
+  &:hover {
+    transform: rotate(360deg) scale(1.2);
+  }
+}
+
+a {
+  @include dFlex();
+  text-decoration: none;
+  color: white;
+}
+
+.impressum {
+  @include dFlex($jc: start);
+  width: calc(100% - 24px);
+  max-width: 1440px;
+  padding-left: 0;
+}
+
+
+@media (max-width: 1200px){
+  .main{
+    >div{
+      flex-direction: column;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+  }
+
+  .impressum{
+    justify-content: center;
+  }
+}

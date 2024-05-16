@@ -4,7 +4,7 @@
       <div>
         <h2>Portfolio</h2>
       </div>
-      <span>{{ exploreHtml }}</span>
+      <span class="description">{{ exploreHtml }}</span>
     </div>
     <div class="projectsBox">
       <div
@@ -12,8 +12,8 @@
         *ngFor="let project of projects; let i = index"
         [ngStyle]="{ 'flex-direction': i % 2 === 0 ? 'row' : 'row-reverse' }"
       >
-        <div>
-          <img [src]="project.projectImg" alt="" />
+        <div class="projectImg" [style.background-image]="'url(assets/img/projects/' + project['projectImg'] + ')'">
+
         </div>
         <div>
           <h3>{{ project["projectName"] }}</h3>

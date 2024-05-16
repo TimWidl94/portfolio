@@ -8,6 +8,7 @@ import { MySkillsComponent } from './my-skills/my-skills.component';
 import { ProjektsComponent } from './projekts/projekts.component';
 import { ContactComponent } from './contact/contact.component';
 import { HeaderComponent } from '../shared/header/header.component';
+import { FooterComponent } from '../shared/footer/footer.component';
 
 @Component({
   selector: 'app-maincontent',
@@ -21,6 +22,7 @@ import { HeaderComponent } from '../shared/header/header.component';
     MySkillsComponent,
     ProjektsComponent,
     ContactComponent,
+    FooterComponent,
   ],
   templateUrl: './maincontent.component.html',
   styleUrl: './maincontent.component.scss',

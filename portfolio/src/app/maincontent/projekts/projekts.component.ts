@@ -20,7 +20,7 @@ export class ProjektsComponent {
         'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
       projectLink: '',
       projectGitHub: 'https://github.com/TimWidl94/Join',
-      projectImg: 'assets/img/projects/laptopJoin.png',
+      projectImg: 'laptopJoin.png',
     },
     {
       projectName: 'El Polo Loco',
@@ -28,7 +28,7 @@ export class ProjektsComponent {
       projectDescription: 'A simple Jump-and_run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the killer chicken.',
       projectLink: '',
       projectGitHub: 'https://github.com/TimWidl94/El-Polo-Loco',
-      projectImg: 'assets/img/projects/laptopElPoloLoco.png',
+      projectImg: 'laptopElPoloLoco.png',
     },
     {
       projectName: 'Pokedex',
@@ -36,7 +36,7 @@ export class ProjektsComponent {
       projectDescription: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
       projectLink: '',
       projectGitHub: 'https://github.com/TimWidl94/Pokedex',
-      projectImg: 'assets/img/projects/laptopPokemon.png',
+      projectImg: 'laptopPokemon.png',
     },
   ];
 }
