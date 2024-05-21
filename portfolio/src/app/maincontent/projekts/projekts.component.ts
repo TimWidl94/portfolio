@@ -1,42 +1,73 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-projekts',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './projekts.component.html',
   styleUrl: './projekts.component.scss',
 })
 export class ProjektsComponent {
-  exploreHtml =
-    'Explore a selection of my work here - interact with projects to see my skills in action';
+  constructor(public translateService: TranslateService) {}
+
+  private languageChangeSubscription: Subscription | undefined;
 
   projects = [
     {
       projectName: 'Join',
       projectTechnologie: 'HTML | CSS | Javascript',
       projectDescription:
-        'Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.',
+        'portfolio.join',
       projectLink: '',
       projectGitHub: 'https://github.com/TimWidl94/Join',
       projectImg: 'laptopJoin.png',
+      translatedDescription: '',
     },
     {
       projectName: 'El Polo Loco',
       projectTechnologie: 'HTML | CSS | Javascript',
-      projectDescription: 'A simple Jump-and_run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the killer chicken.',
+      projectDescription:
+        'portfolio.epl',
       projectLink: '',
       projectGitHub: 'https://github.com/TimWidl94/El-Polo-Loco',
       projectImg: 'laptopElPoloLoco.png',
+      translatedDescription: '',
     },
     {
       projectName: 'Pokedex',
       projectTechnologie: 'HTML | CSS | Javascript | Api',
-      projectDescription: 'Based on the PokéAPI a simple library that provides and catalogues pokemon information.',
+      projectDescription:
+        'portfolio.pokedex',
       projectLink: '',
       projectGitHub: 'https://github.com/TimWidl94/Pokedex',
       projectImg: 'laptopPokemon.png',
+      translatedDescription: '',
     },
   ];
+
+  ngOnInit(): void {
+    this.translateProjectDescriptions();
+    this.languageChangeSubscription = this.translateService.onLangChange.subscribe(() => {
+      this.translateProjectDescriptions();
+    });
+  }
+
+  ngOnDestroy(): void {
+    if (this.languageChangeSubscription) {
+      this.languageChangeSubscription.unsubscribe();
+    }
+  }
+  translateProjectDescriptions(): void {
+    this.projects.forEach((project) => {
+      const translationKey = `portfolio.${project.projectDescription}`;
+      this.translateService.get(translationKey).subscribe((translatedDescription: string) => {
+        project.translatedDescription = translatedDescription;
+      });
+    });
+  }
+
 }

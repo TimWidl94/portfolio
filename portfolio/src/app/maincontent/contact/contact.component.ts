@@ -9,11 +9,12 @@ import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   animations: [
@@ -38,7 +39,7 @@ import { FormsModule, NgForm } from '@angular/forms';
   ],
 })
 export class ContactComponent implements OnInit {
-  constructor() {}
+  constructor(public translateService: TranslateService) {}
 
   ngOnInit(): void {
     let hoverLink = document.getElementById('privatPolicyLink');
@@ -118,9 +119,9 @@ export class ContactComponent implements OnInit {
     }
   }
 
-  setAlreadyChecked(){
-    if(!this.alreadyChecked && this.privatPolicy){
-        this.alreadyChecked = true;
+  setAlreadyChecked() {
+    if (!this.alreadyChecked && this.privatPolicy) {
+      this.alreadyChecked = true;
     }
   }
 }

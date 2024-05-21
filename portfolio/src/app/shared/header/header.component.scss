@@ -16,6 +16,8 @@ header {
   padding: 36px 100px;
   width: 100vw;
   max-width: calc(100vw - 200px);
+  position: fixed;
+  z-index: 10;
   > div {
     @include dFlex($jc: space-between);
     width: 100%;
@@ -26,7 +28,7 @@ header {
 .headlineMenu{
 @include dFlex($jc: space-between, $g: 29px);
       width: 100%;
-      max-width: 424px;
+      max-width: 500px;
       max-height: 32px;
       height: 100%;
 }
@@ -37,6 +39,7 @@ a {
   text-decoration: none;
   font-weight: 400;
   font-size: 23px;
+  text-wrap: nowrap;
   &:hover {
     transition: ease-in-out 200ms;
     color: $blueText;
@@ -71,12 +74,14 @@ a {
   position: absolute;
   left: 0;
   right: 0;
-  top: 100px;
+  top: 106px;
   bottom: 0;
   background-color: #414856;
   flex-direction: column;
   gap: 20px;
   z-index: 999;
+  width: 100%;
+  height: 100vh;
   > a {
     color: white;
     font-weight: 400;
@@ -84,6 +89,7 @@ a {
     line-height: 27.6px;
     width: 150px;
     height: 40px;
+    text-wrap: nowrap;
   }
 }
 
@@ -102,6 +108,47 @@ a {
 
 .displayFlex {
   display: flex !important;
+}
+
+
+.languageButtonBox{
+  @include dFlex($jc: start, $g: 6px);
+  width: 150px;
+}
+
+.languageButton{
+  background-color: transparent;
+  border: none;
+  color: white;
+  text-decoration: none;
+  font-size: 23px;
+  font-weight: 400;
+  padding: 0;
+  &:hover {
+    transition: ease-in-out 200ms;
+    color: $blueText;
+    cursor: pointer;
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      width: 26px;
+      background: $purple;
+      transition: ease-in-out 200ms;
+    }
+  }
+}
+
+.selectedLanguage{
+  color: $blueText;
+  &::after {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 26px;
+    background: $purple;
+    transition: ease-in-out 200ms;
+  }
 }
 
 @media (min-width: 1200px) {

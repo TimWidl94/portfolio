@@ -67,9 +67,9 @@ section {
     display: flex;
     text-align: end;
   }
-  > button {
+  > a {
     @include dFlex();
-    position: absolute;
+    // position: absolute;
     top: 220px;
     transform: translateX(40px);
   }

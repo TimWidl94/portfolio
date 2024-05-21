@@ -2,25 +2,26 @@
   <div>
     <img src="assets/img/logo/logoTim.svg" alt="" />
     <div class="headlineMenu">
-      <a href="#aboutMe">About me </a>
-      <a href="#skills">Skills </a>
-      <a href="#projects">Portfolio </a>
-      <div>
-        <button > de</button>
-        <span style="color: white;">|</span>
-        <button > en</button>
+      <a href="#aboutMe">{{ "header.aboutMe" | translate }}</a>
+      <a href="#skills">{{ "header.skills" | translate }}</a>
+      <a href="#projects">{{ "header.portfolio" | translate }}</a>
+      <div class="languageButtonBox">
+        <button name="deButton" class="languageButton" [class.selectedLanguage]="languageDeSelected" (click)="changeLanguage('de')">DE</button>
+        <span style="color: white">|</span>
+        <button name="enButton" class="languageButton" [class.selectedLanguage]="!languageDeSelected" (click)="changeLanguage('en')">EN</button>
       </div>
     </div>
     <div class="burgerMenu" (click)="toggleBurgerMenu()"></div>
     <div class="burgerMenuOpen" [class.displayFlex]="burgerMenu">
       <div class="burgerMenuCloseIcon" (click)="toggleBurgerMenu()"></div>
-      <a href="">About me</a>
-      <a href="">My skills</a>
-      <a href="">Portfolio</a>
-      <a href="">Contact</a>
-      <div>
-        <a href="">de</a>
-        <a href="">en</a>
+      <a href="#aboutMe">{{ "header.aboutMe" | translate }}</a>
+      <a href="#skills">{{ "header.skills" | translate }}</a>
+      <a href="#projects">{{ "header.portfolio" | translate }}</a>
+      <a href="#contact">{{ "header.contact" | translate }}</a>
+      <div class="languageButtonBox">
+        <button name="deButton" class="languageButton" [class.selectedLanguage]="languageDeSelected" (click)="changeLanguage('de')">DE</button>
+        <span style="color: white">|</span>
+        <button name="enButton" class="languageButton" [class.selectedLanguage]="!languageDeSelected" (click)="changeLanguage('en')">EN</button>
       </div>
     </div>
   </div>

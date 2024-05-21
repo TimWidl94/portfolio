@@ -4,7 +4,7 @@
       <div>
         <h2>Portfolio</h2>
       </div>
-      <span class="description">{{ exploreHtml }}</span>
+      <span class="description">{{ "portfolio.exploreHtml" | translate }}</span>
     </div>
     <div class="projectsBox">
       <div
@@ -16,9 +16,9 @@
 
         </div>
         <div>
-          <h3>{{ project["projectName"] }}</h3>
+          <h3>{{ project["projectName"]}}</h3>
           <h4>{{ project["projectTechnologie"] }}</h4>
-          <span>{{ project["projectDescription"] }}</span>
+          <span>{{ project["projectDescription"] | translate }}</span>
           <div class="buttonBox">
             <a href="" class="purpleButton">Live test</a>
             <a
