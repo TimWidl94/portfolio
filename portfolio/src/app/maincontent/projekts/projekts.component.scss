@@ -8,6 +8,7 @@ section {
   > main {
     max-width: 1440px;
     width: 100%;
+    padding-top: 100px;
     &:not(:last-child) {
       z-index: 2;
     }
@@ -109,7 +110,7 @@ section {
   }
 }
 
-.projectImg{
+.projectImg {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -118,11 +119,6 @@ section {
 }
 
 @media (max-width: 1200px) {
-  main{
-
-  }
-
-
   .project {
     flex-direction: column !important;
     width: calc(100% - 32px);
@@ -139,21 +135,21 @@ section {
     font-size: 45px !important;
     line-height: 54px !important;
   }
-  .projectImg{
+  .projectImg {
     width: 300px;
   }
-  .description{
+  .description {
     margin: 0 16px;
   }
-  .headlineBox{
+  .headlineBox {
     margin: 0;
   }
-  .buttonBox{
+  .buttonBox {
     text-wrap: nowrap;
     gap: 20px;
   }
-  .shadowBox{
-    >img{
+  .shadowBox {
+    > img {
       scale: 0.4;
       top: 150px;
     }

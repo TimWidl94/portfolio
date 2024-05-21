@@ -3,7 +3,7 @@
 section {
   @include dFlex($jc: start);
   width: 100%;
-  height: calc(100vh - 106px);
+  height: 100%;
   flex-direction: column;
   overflow: hidden;
 }
@@ -12,6 +12,7 @@ section {
   @include dFlex($ai: start);
   // width: 100%;
   max-width: 1440px;
+  flex-direction: column;
   // height: 100%;
 }
 
@@ -21,6 +22,7 @@ section {
   max-width: 1440px;
   // height: 80%;
   // position: absolute;
+  height: 700px;
   top: 106px;
 }
 
@@ -110,6 +112,7 @@ section {
   z-index: 2;
   max-width: 1440px;
   height: 34px;
+  margin-top: 20px;
   @include dFlex($jc: start, $g: 40px);
   > div {
     border: 2px solid $purple;
@@ -200,14 +203,14 @@ section {
 }
 
 @media (min-width: 1200px) {
-  .iconBox {
-    position: absolute;
+  section{
+    height: calc(100vh - 104px) !important;
   }
 }
 
 @media (max-width: 1200px) {
   section{
-    height: unset;
+    // height: unset;
   }
   .main {
     align-items: start;
@@ -216,6 +219,7 @@ section {
   }
   .mainContent {
     flex-direction: column;
+    height: 100%;
   }
   .mainContent {
     justify-content: center;

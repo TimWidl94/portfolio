@@ -3,13 +3,13 @@
 section {
   @include dFlex();
   position: relative;
-  margin: 200px 0;
   color: white;
   width: 100vw;
 
   > main:not(:last-child) {
     @include dFlex($jc: space-between);
     max-width: 1440px;
+    padding-top: 100px;
   }
 }
 
@@ -77,7 +77,7 @@ section {
 
 .skillShadowLeft {
   position: absolute;
-  height: 80%;
+  height: 60%;
   left: 0;
   > img {
     object-fit: cover;

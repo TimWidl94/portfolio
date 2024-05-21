@@ -2,9 +2,14 @@
   <div>
     <img src="assets/img/logo/logoTim.svg" alt="" />
     <div class="headlineMenu">
-      <a href="">About me </a>
-      <a href="">Skills </a>
-      <a href="">Portfolio </a>
+      <a href="#aboutMe">About me </a>
+      <a href="#skills">Skills </a>
+      <a href="#projects">Portfolio </a>
+      <div>
+        <button > de</button>
+        <span style="color: white;">|</span>
+        <button > en</button>
+      </div>
     </div>
     <div class="burgerMenu" (click)="toggleBurgerMenu()"></div>
     <div class="burgerMenuOpen" [class.displayFlex]="burgerMenu">
@@ -13,6 +18,10 @@
       <a href="">My skills</a>
       <a href="">Portfolio</a>
       <a href="">Contact</a>
+      <div>
+        <a href="">de</a>
+        <a href="">en</a>
+      </div>
     </div>
   </div>
 </header>
