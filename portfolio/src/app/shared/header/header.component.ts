@@ -11,29 +11,26 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  constructor() {}
-
   burgerMenu: boolean = false;
   public languageDeSelected: boolean = false;
-
-  toggleBurgerMenu() {
-    if (!this.burgerMenu) {
-      this.burgerMenu = true;
-      document.body.classList.add('noScroll');
-    } else {
-      this.burgerMenu = false;
-      document.body.classList.remove('noScroll');
-    }
-  }
-
   languages = ['en', 'de'];
-  private translateService = inject(TranslateService);
+
+  constructor(private translateService: TranslateService) { }
 
   ngOnInit(): void {
-    let defaultLanguage = localStorage.getItem('language') || 'en';
-    this.translateService.setDefaultLang(defaultLanguage);
-    this.translateService.use(defaultLanguage);
-    this.checkLanguageButton(defaultLanguage);
+    const storedLanguage = localStorage.getItem('language') || 'en';
+    this.translateService.setDefaultLang(storedLanguage);
+    this.translateService.use(storedLanguage);
+    this.checkLanguageButton(storedLanguage);
+  }
+
+  toggleBurgerMenu() {
+    this.burgerMenu = !this.burgerMenu;
+    if (this.burgerMenu) {
+      document.body.classList.add('noScroll');
+    } else {
+      document.body.classList.remove('noScroll');
+    }
   }
 
   changeLanguage(lang: string) {
@@ -42,9 +39,7 @@ export class HeaderComponent implements OnInit {
     this.checkLanguageButton(lang);
   }
 
-  checkLanguageButton(lang: string){
-    if(lang == 'de'){
-      this.languageDeSelected = true;
-    } else { this.languageDeSelected = false}
+  checkLanguageButton(lang: string) {
+    this.languageDeSelected = (lang === 'de');
   }
 }

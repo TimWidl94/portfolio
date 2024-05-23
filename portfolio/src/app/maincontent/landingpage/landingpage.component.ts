@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
 import { HeaderComponent } from '../../shared/header/header.component';
 
@@ -16,14 +16,19 @@ export class LandingpageComponent implements OnInit, OnDestroy {
   languageDeSelected: boolean = false;
   defaultLanguage: string = "";
 
-  constructor(public translateService: TranslateService) {
-  }
+  constructor(public translateService: TranslateService) { }
 
   ngOnInit(): void {
-    this.setLanguage = this.translateService.onLangChange.subscribe(() => {
-      this.useLang();
+    this.setLanguage = this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.useLang(event.lang);
       console.log("Language changed, subscription value:", this.setLanguage);
     });
+
+    // Initial language setup
+    const storedLanguage = localStorage.getItem('language') || 'en';
+    this.translateService.setDefaultLang(storedLanguage);
+    this.translateService.use(storedLanguage);
+    this.useLang(storedLanguage);
   }
 
   ngOnDestroy(): void {
@@ -32,15 +37,14 @@ export class LandingpageComponent implements OnInit, OnDestroy {
     }
   }
 
-  useLang(): void {
-    let defaultLanguage = localStorage.getItem('language') || 'en';
-    this.translateService.setDefaultLang(defaultLanguage);
-    if (defaultLanguage == "de"){
+  useLang(lang: string): void {
+    this.defaultLanguage = lang;
+    if (lang === 'de') {
       this.languageDeSelected = true;
-      console.log("de", this.languageDeSelected)
+      console.log("de", this.languageDeSelected);
     } else {
       this.languageDeSelected = false;
-      console.log("en", this.languageDeSelected)
+      console.log("en", this.languageDeSelected);
     }
   }
 }
