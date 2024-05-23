@@ -1,24 +1,31 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { MaincontentComponent } from './maincontent/maincontent.component';
+import { ImpressumComponent } from './impressum/impressum.component';
 import { TranslateModule } from '@ngx-translate/core';
-
-
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, MaincontentComponent, TranslateModule],
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    MaincontentComponent,
+    TranslateModule,
+    RouterLink,
+    RouterLinkActive,
+    ImpressumComponent,
+    HeaderComponent,
+    FooterComponent,
+  ],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent{
+
   title = 'portfolio';
-
-
-
-
-
 
 }

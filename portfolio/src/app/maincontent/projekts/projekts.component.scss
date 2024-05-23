@@ -3,7 +3,7 @@
 section {
   @include dFlex();
   flex-direction: column;
-  margin-bottom: 150px;
+  // margin-bottom: 150px;
   width: 100%;
   > main {
     max-width: 1440px;
@@ -60,15 +60,16 @@ section {
 }
 
 .project {
-  @include dFlex();
+  @include dFlex($g: 40px);
   // max-width: 1168px;
   width: 100%;
   z-index: 1;
-  margin-bottom: 100px;
+  margin-bottom: 160px;
   > div {
     @include dFlex($ai: start);
     flex-direction: column;
     color: white;
+    max-width: 900px;
     > img {
       scale: 0.8;
     }

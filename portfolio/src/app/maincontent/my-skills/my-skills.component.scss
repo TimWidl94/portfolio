@@ -9,7 +9,7 @@ section {
   > main:not(:last-child) {
     @include dFlex($jc: space-between);
     max-width: 1440px;
-    padding-top: 100px;
+    padding: 100px 0;
   }
 }
 

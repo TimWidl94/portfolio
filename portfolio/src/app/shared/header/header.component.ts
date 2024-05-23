@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
   constructor() {}
 
   burgerMenu: boolean = false;
-  languageDeSelected: boolean = false;
+  public languageDeSelected: boolean = false;
 
   toggleBurgerMenu() {
     if (!this.burgerMenu) {

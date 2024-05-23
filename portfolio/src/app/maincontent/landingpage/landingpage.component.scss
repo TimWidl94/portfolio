@@ -113,7 +113,7 @@ section {
   z-index: 2;
   max-width: 1440px;
   height: 34px;
-  margin-top: 20px;
+  margin-top: 40px;
   @include dFlex($jc: start, $g: 40px);
   > div {
     border: 2px solid $purple;
@@ -154,13 +154,12 @@ section {
 }
 
 .scrollDownBox {
-  @include dFlex($jc: space-between);
+  @include dFlex($jc: space-between, $g: 90px);
   position: absolute;
-  bottom: 30px;
+  bottom: 50px;
   right: 20px;
   z-index: 3;
   flex-direction: column;
-  gap: 8px;
   max-height: 105px;
   height: 100px;
   animation: scrollTop 1.5s ease-in-out;
@@ -201,6 +200,10 @@ section {
   > img {
     object-fit: cover;
   }
+}
+
+.deIam{
+  font-size: 32px !important;
 }
 
 @media (min-width: 1200px) {

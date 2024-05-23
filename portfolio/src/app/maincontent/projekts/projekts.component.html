@@ -15,7 +15,7 @@
         <div class="projectImg" [style.background-image]="'url(assets/img/projects/' + project['projectImg'] + ')'">
 
         </div>
-        <div>
+        <div [ngStyle]="{ 'align-items': i % 2 === 0 ? 'start' : 'end' }">
           <h3>{{ project["projectName"]}}</h3>
           <h4>{{ project["projectTechnologie"] }}</h4>
           <span>{{ project["projectDescription"] | translate }}</span>

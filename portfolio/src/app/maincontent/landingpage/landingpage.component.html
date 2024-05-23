@@ -11,7 +11,7 @@
       </div>
       <div class="textBox">
         <div>
-          <p class="sideText">{{ "landingpage.iAm" | translate}}</p>
+          <p [class.deIam]="languageDeSelected" class="sideText">{{ "landingpage.iAm" | translate}}</p>
           <div>
             <span class="nameText">Tim Widl</span>
             <span class="customNameText">FRONTEND DEVELOPER</span>
@@ -33,7 +33,6 @@
       /></a>
       <span class="email">TimWidl195&#64;gmail.com</span>
     </div>
-
     <div class="scrollDownBox">
       <p>{{ "landingpage.scroll" | translate}}</p>
       <img src="assets/img/icons/arrowDownIcon.svg" alt="" />
