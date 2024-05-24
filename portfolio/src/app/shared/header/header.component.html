@@ -18,7 +18,7 @@
       <a href="#skills">{{ "header.skills" | translate }}</a>
       <a href="#projects">{{ "header.portfolio" | translate }}</a>
       <a href="#contact">{{ "header.contact" | translate }}</a>
-      <div class="languageButtonBox">
+      <div class="languageButtonBox languageButtonBoxBurgerMenu">
         <button name="deButton" class="languageButton" [class.selectedLanguage]="languageDeSelected" (click)="changeLanguage('de')">DE</button>
         <span style="color: white">|</span>
         <button name="enButton" class="languageButton" [class.selectedLanguage]="!languageDeSelected" (click)="changeLanguage('en')">EN</button>

@@ -1,0 +1,68 @@
+@import "./../../styles.scss";
+
+.privatPolicy{
+  @include dFlex();
+  flex-direction: column;
+  color: white;
+  width: calc(100% - 32px);
+  margin: 106px 16px 0 16px;
+  max-width: 1440px;
+  text-align: start;
+}
+
+p{
+  width: 100%;
+  word-wrap: break-word;
+  margin: 0;
+}
+
+h2{
+  width: 100%;
+  font-weight: 700;
+  font-size: 90px;
+  line-height: 108px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
+
+h3{
+  color: $purple;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+h4{
+  color: $purple;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+.contactDataBox{
+  @include dFlex();
+  width: 100%;
+  flex-direction: column;
+}
+
+.generalText{
+  width: 100%;
+  >p{
+    margin-bottom: 20px;
+  }
+}
+
+.structureBox{
+  width: 100%;
+  >p{
+    margin: 20px 0;
+  }
+}
+
+.namingBox{
+  margin: 20px 0;
+  width: 100%;
+  >a{
+    text-decoration: none;
+    color: $purple;
+  }
+}

@@ -6,37 +6,52 @@ section {
   width: 100%;
   flex-direction: column;
   position: relative;
-  > div:not(:last-child) {
-    @include dFlex($jc: start, $ai: start);
+}
+
+.headline {
+  @include dFlex($jc: start, $ai: center);
+  width: 100%;
+  margin-bottom: 40px;
+  gap: 6px;
+  > h2 {
+    margin: 0;
+    font-weight: 700;
+    font-size: 90px;
+    line-height: 108px;
     width: 100%;
     max-width: 1440px;
-    margin-bottom: 40px;
-    gap: 24px;
-    > h2 {
-      margin: 0;
-      font-weight: 700;
-      font-size: 90px;
-      line-height: 108px;
-      width: 100%;
-    }
   }
+}
+
+.customLineLeft {
+  @include dFlex();
+  min-width: 10px;
+  z-index: 2;
+  border: 2px solid $purple;
+  flex-grow: 1;
+  border-bottom-right-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.customLineRight {
+  flex-grow: 1;
 }
 
 .main {
   @include dFlex($ai: start);
   max-width: 1440px;
-  width: 100%;
+  width: calc(100% - 32px);
   height: auto;
-  // height: 600px;
   margin-bottom: 80px;
   position: relative;
+  margin: 0 16px;
+  margin-bottom: 80px;
 }
 
 .leftContentBox {
   @include dFlex($jc: start, $ai: start);
   width: 40%;
   height: 100%;
-  // max-height: 504px;
   flex-direction: column;
   > h3 {
     font-weight: 700;
@@ -65,22 +80,21 @@ section {
   width: 100%;
   position: relative;
   > div {
-    @include dFlex();
+    @include dFlex($jc: start);
     width: 100%;
     > label {
-      width: 100%;
       > div {
         position: absolute;
         left: 0px;
         width: 26px;
         height: 26px;
       }
-      > p {
-        font-weight: 400;
-        font-size: 14px;
-        line-height: 16.8px;
-        margin: 0;
-      }
+    }
+    > p {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 16.8px;
+      margin: 0;
     }
   }
   > span {
@@ -90,6 +104,7 @@ section {
     font-weight: 400;
     font-size: 14px;
     line-height: 16.8px;
+    padding-top: 10px;
   }
 }
 
@@ -114,7 +129,7 @@ section {
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
-  &:hover{
+  &:hover {
     cursor: pointer;
     background-image: url(./../../../assets/img/icons/goUpArrowIconHover.svg);
   }
@@ -145,18 +160,21 @@ input:-webkit-autofill {
 
 .privatPolicyLabel {
   @include dFlex($g: 8px, $jc: start);
-  width: 100%;
-  padding-left: 32px;
-  margin-bottom: 12px;
   > div {
     @include dFlex();
     > img:hover {
       cursor: pointer;
     }
   }
-  > p {
-    > a {
-      text-decoration: none;
+}
+
+.privatPolicyText{
+  padding-left: 35px;
+  > a {
+    text-decoration: none;
+    cursor: pointer;
+    &:hover{
+      color: $blueText;
     }
   }
 }
@@ -189,7 +207,6 @@ input:-webkit-autofill {
     margin-bottom: 8px;
     &:focus {
       outline: none;
-      // border: 1px solid $purple !important;
     }
     &::-webkit-input-placeholder {
       color: white;
@@ -224,65 +241,84 @@ input:-webkit-autofill {
 }
 
 .shadowBackground {
-  // @include dFlex();
   width: 400px;
   height: 400px;
   position: absolute;
   left: 0;
   bottom: 0;
-  // background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url("./../../../assets/img/shadows/contactShadow.svg");
 }
 
+.userFeedbackBox {
+  position: absolute;
+  @include dFlex();
+  background-color: $backgroundColor;
+  border: 2px solid $blueText;
+  border-radius: 16px;
+  width: 25%;
+  height: 20%;
+  box-shadow: 0px 0px 40px $purple;
+  transition: opacity 1s ease-in-out;
+  z-index: 2;
+  padding: 10px;
+  text-align: center;
+  > span {
+    @include dFlex();
+    text-wrap: wrap;
+    font-size: 32px;
+    line-height: 38.4px;
+  }
+}
 
-@media (max-width:1200px){
-  .main{
+@media (max-width: 1200px) {
+  .main {
     flex-direction: column;
-    margin: 0 16px;
-    width: calc(100% - 32px) !important;
     gap: 32px;
     z-index: 2;
   }
-  .leftContentBox{
+  .leftContentBox {
     width: 100%;
   }
-  .rightContentBox{
+  .rightContentBox {
     width: 100%;
     align-items: center;
   }
-  input{
+  input {
     width: calc(100% - 52px) !important;
   }
-  textarea{
+  textarea {
     width: calc(100% - 52px) !important;
   }
 }
 
-@media (max-width: 700px){
- .leftContentBox{
-  >h3{
-    font-size: 23px;
-    line-height: 27.6px;
+@media (max-width: 700px) {
+  .leftContentBox {
+    > h3 {
+      font-size: 23px;
+      line-height: 27.6px;
+    }
+    > span {
+      font-size: 16px;
+      line-height: 19.2px;
+    }
   }
-  >span{
-    font-size: 16px;
-    line-height: 19.2px;
-  }
- }
-  h2{
+  h2 {
     font-size: 45px !important;
     line-height: 54px !important;
   }
-  .main{
+  .main {
     margin-bottom: 200px !important;
   }
-  .shadowBackground{
+  .shadowBackground {
     width: 250px;
     height: 250px;
   }
-  .arrowImg{
+  .arrowImg {
     bottom: -80px;
+  }
+  .userFeedbackBox{
+    width: 50%;
   }
 }

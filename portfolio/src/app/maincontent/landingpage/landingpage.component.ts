@@ -41,10 +41,8 @@ export class LandingpageComponent implements OnInit, OnDestroy {
     this.defaultLanguage = lang;
     if (lang === 'de') {
       this.languageDeSelected = true;
-      console.log("de", this.languageDeSelected);
     } else {
       this.languageDeSelected = false;
-      console.log("en", this.languageDeSelected);
     }
   }
 }

@@ -40,9 +40,11 @@
     "placeholderMessage": "Your message",
     "messageRequired": "Your message is empty",
     "privatPolicyFirst": "I've read the",
-    "privatPolicySecond": "privacy policy",
-    "privatPolicyLink": "and agree to the processing of my data as outlined.",
-    "button": "Send message :)"
+    "privatPolicySecond": "and agree to the processing of my data as outlined.",
+    "privatPolicyLink": "privacy policy",
+    "button": "Send message :)",
+    "acceptPP": "Please accept the privacy policy.",
+    "successMessage": "Thank you for your message."
   },
   "impressum": {
     "headline": "Impressum",
@@ -50,7 +52,7 @@
     "Represented": "Represented by:",
     "contact": "Contact",
     "disclaimer": "Disclaimer",
-    "liabContent ": "Liability for content",
+    "liabContent": "Liability for content",
     "liabContentText": "The contents of our pages were created with the greatest care. For the correctness, completeness and topicality of the contents, however assume any liability. As a service provider we are responsible according to § 7 Abs.1 TMG for own contents on these pages according to the general laws. According to §§ 8 to 10 TMG, however, we are not obligated as a service provider to to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity. Obligations to remove or block the use of information in accordance with in accordance with general legislation remain unaffected by this. Any liability in this respect liability is only possible from the time of knowledge of a concrete infringement is possible. As soon as we become aware of such we will remove this content immediately.",
     "liabLink": "Liability for links",
     "liabLinkText": "Our website contains links to external third-party websites, the content of which we have no influence on. Therefore, we cannot assume any liability for this assume any liability. The respective provider or operator of the linked pages is always provider or operator of the pages. The linked pages were checked for possible legal violations at the time of linking. checked. Illegal contents were not recognizable at the time of linking. recognizable. However, permanent monitoring of the content of the linked pages is unreasonable without concrete evidence of an infringement. If we will immediately remove such links if we become aware of any infringements. remove such links immediately.",
@@ -63,6 +65,36 @@
     "imprintFrom": "Imprint from",
     "imprintGenerator": "imprint generator",
     "imprintOf": "from"
+  },
+  "privatPolicy": {
+    "headline": "Privacy policy",
+    "generalText1": "Personal data (hereinafter mostly referred to as data) will only be processed by us to the extent necessary and for the purpose of providing a functional and user-friendly website, including its content and the services offered there.",
+    "generalText2": "In accordance with Art. 4 No. 1. of Regulation (EU) 2016/679, i.e. the General Data Protection Regulation (hereinafter referred to as GDPR), processing means any operation or set of operations which is performed on personal data or on sets of personal data, whether or not by automated means, such as collection, recording, organization, structuring, storage, adaptation or alteration, retrieval, consultation, use, disclosure by transmission, dissemination or otherwise making available, alignment or combination, restriction, erasure or destruction.",
+    "generalText3": "With the following privacy policy, we inform you in particular about the type, scope, purpose, duration and legal basis of the processing of personal data, insofar as we decide either alone or together with others on the purposes and means of processing. In addition, we inform you below about the third-party components we use for optimization purposes and to increase the quality of use, insofar as third parties process data under their own responsibility.",
+    "structure": "Our privacy policy is structured as follows:",
+    "structure1": "I. Information about us as the controller",
+    "structure2": "II Rights of users and data subjects",
+    "structure3": "III. Information on data processing",
+    "informationHeadline": "I. Information about us as the controller",
+    "informationText": "The responsible provider of this website in terms of data protection law is:",
+    "rightsHeadline": "II Rights of the users and data subjects",
+    "rightsText1": "With regard to the data processing described in more detail below, users and data subjects have the right to",
+    "rightsText2": "to confirmation as to whether data concerning them is being processed, to information about the processed data, to further information about the data processing and to copies of the data (cf. also Art. 15 GDPR);",
+    "rightsText3": "to rectification or completion of incorrect or incomplete data (see also Art. 16 GDPR);",
+    "rightsText4": "to the immediate erasure of the data concerning them (see also Art. 17 GDPR) or, alternatively, if further processing is required in accordance with Art. 17 (3) GDPR, to the restriction of processing in accordance with Art. 18 GDPR;",
+    "rightsText5": "to receive the data concerning them and provided by them and to transfer this data to other providers/controllers (cf. also Art. 20 GDPR);",
+    "rightsText6": "to lodge a complaint with the supervisory authority if they are of the opinion that the data concerning them is being processed by the provider in breach of data protection regulations (see also Art. 77 GDPR).",
+    "rightsText7": "In addition, the provider is obliged to inform all recipients to whom data has been disclosed by the provider of any rectification or erasure of data or restriction of processing carried out on the basis of Articles 16, 17 (1), 18 GDPR. However, this obligation does not apply if this notification is impossible or involves a disproportionate effort. Notwithstanding this, the user has a right to information about these recipients.",
+    "rightsText8": "In accordance with Art. 21 GDPR, users and data subjects also have the right to object to the future processing of data concerning them, provided that the data is processed by the provider in accordance with Art. 6 para. 1 lit. f) GDPR. In particular, an objection to data processing for the purpose of direct advertising is permitted.",
+    "dataProcessingHeadline": "III. Information on data processing",
+    "dataProcessingText": "Your data processed when using our website will be deleted or blocked as soon as the purpose of storage no longer applies, the deletion of the data does not conflict with any statutory retention obligations and no other information is provided below on individual processing procedures.",
+    "contactHeadline": "Contact requests / contact option",
+    "contactText1": "If you contact us via contact form or e-mail, the data you provide will be used to process your request. The provision of the data is necessary for processing and answering your inquiry - without it we cannot answer your inquiry or can only answer it to a limited extent.",
+    "contactText2": "The legal basis for this processing is Art. 6 para. 1 lit. b) GDPR.",
+    "contactText3": "Your data will be deleted if your request has been conclusively answered and the deletion does not conflict with any statutory retention obligations, such as in the case of any subsequent contract processing.",
+    "linkToSample": "Sample data protection declaration",
+    "the": "the",
+    "nameOfSamplePartner": "Law firm Weiß &amp; Partner"
   }
 
 }

@@ -1,24 +1,28 @@
 <section id="aboutMe">
-  <main>
-    <div>
-      <h2>{{ "aboutMe.headline" | translate}}</h2>
-      <span>{{ "aboutMe.introText" | translate }}</span>
-      <div class="aboutMeContentBox">
-        <div>
-          <img src="assets/img/icons/lightBulbIcon.svg" alt="" /><span
-            >{{ "aboutMe.firstText" | translate }}
-          </span>
-        </div>
-        <div>
-          <img src="assets/img/icons/puzzleIcon.svg" alt="" /><span
-            >{{ "aboutMe.secondText" | translate }}</span
-          >
+  <div class="main">
+    <div class="customBoxLeft"></div>
+    <div class="aboutContentBox">
+      <div>
+        <h2>{{ "aboutMe.headline" | translate }}</h2>
+        <span>{{ "aboutMe.introText" | translate }}</span>
+        <div class="aboutMeContentBox">
+          <div>
+            <img src="assets/img/icons/lightBulbIcon.svg" alt="" /><span
+              >{{ "aboutMe.firstText" | translate }}
+            </span>
+          </div>
+          <div>
+            <img src="assets/img/icons/puzzleIcon.svg" alt="" /><span>{{
+              "aboutMe.secondText" | translate
+            }}</span>
+          </div>
         </div>
       </div>
+      <div class="imgBox">
+        <div class="roundImgRightBox"></div>
+        <div class="borderLineRight"></div>
+      </div>
     </div>
-    <div class="imgBox">
-      <div class="roundImgRightBox"></div>
-      <div class="borderLineRight"></div>
-    </div>
-  </main>
+    <div class="customBoxRight"></div>
+  </div>
 </section>

@@ -1,22 +1,30 @@
 <section id="projects">
-  <main>
-    <div class="headlineBox">
-      <div>
-        <h2>Portfolio</h2>
+  <div class="headlineBox">
+    <div>
+      <div class="customLineLeftBox">
+        <div class="customLineLeftEmpty"></div>
+        <div class="customLineLeft"></div>
       </div>
-      <span class="description">{{ "portfolio.exploreHtml" | translate }}</span>
+      <h2>Portfolio</h2>
+      <div class="customLineRight"></div>
     </div>
+    <span class="description">{{ "portfolio.exploreHtml" | translate }}</span>
+  </div>
+  <div class="main">
     <div class="projectsBox">
       <div
         class="project"
         *ngFor="let project of projects; let i = index"
         [ngStyle]="{ 'flex-direction': i % 2 === 0 ? 'row' : 'row-reverse' }"
       >
-        <div class="projectImg" [style.background-image]="'url(assets/img/projects/' + project['projectImg'] + ')'">
-
-        </div>
+        <div
+          class="projectImg"
+          [style.background-image]="
+            'url(assets/img/projects/' + project['projectImg'] + ')'
+          "
+        ></div>
         <div [ngStyle]="{ 'align-items': i % 2 === 0 ? 'start' : 'end' }">
-          <h3>{{ project["projectName"]}}</h3>
+          <h3>{{ project["projectName"] }}</h3>
           <h4>{{ project["projectTechnologie"] }}</h4>
           <span>{{ project["projectDescription"] | translate }}</span>
           <div class="buttonBox">
@@ -31,7 +39,7 @@
         </div>
       </div>
     </div>
-  </main>
+  </div>
   <div class="shadowBox">
     <img src="assets/img/shadows/projectsShadow.svg" alt="" />
   </div>

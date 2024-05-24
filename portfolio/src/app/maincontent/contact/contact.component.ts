@@ -41,6 +41,8 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 export class ContactComponent implements OnInit {
   constructor(public translateService: TranslateService) {}
 
+  userFeedback: boolean = false;
+
   ngOnInit(): void {
     let hoverLink = document.getElementById('privatPolicyLink');
     let checkboxBackground = document.getElementById('checkboxBackground');
@@ -81,18 +83,19 @@ export class ContactComponent implements OnInit {
     if (
       ngForm.submitted &&
       ngForm.form.valid &&
-      !this.mailTest &&
       this.privatPolicy
     ) {
       this.http
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            console.log(this.contactData);
+            console.log("hat geklappt",this.contactData);
             ngForm.resetForm();
+            this.userFeedbackInitialization();
           },
           error: (error) => {
-            console.error(error);
+            console.error("hat nicht geklappt", error);
+            this.userFeedbackInitialization();
           },
           complete: () => console.info('send post complete'),
         });
@@ -102,7 +105,8 @@ export class ContactComponent implements OnInit {
       this.mailTest &&
       this.privatPolicy
     ) {
-      console.log(this.contactData);
+      this.userFeedbackInitialization();
+      console.log("hat mit elseif geklappt", this.contactData);
       ngForm.resetForm();
     }
   }
@@ -123,5 +127,14 @@ export class ContactComponent implements OnInit {
     if (!this.alreadyChecked && this.privatPolicy) {
       this.alreadyChecked = true;
     }
+  }
+
+  userFeedbackInitialization(){
+    this.userFeedback = true;
+    console.log("auf true gesetzt", this.userFeedback);
+    setTimeout(() => {
+      this.userFeedback = false;
+      console.log("auf true gesetzt", this.userFeedback);
+    }, 3000)
   }
 }

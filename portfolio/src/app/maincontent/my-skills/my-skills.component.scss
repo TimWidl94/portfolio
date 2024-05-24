@@ -9,7 +9,7 @@ section {
   > main:not(:last-child) {
     @include dFlex($jc: space-between);
     max-width: 1440px;
-    padding: 100px 0;
+    padding: 120px 0;
   }
 }
 
@@ -18,7 +18,6 @@ section {
   width: 60%;
   flex-wrap: wrap;
   z-index: 1;
-  // flex-direction: column;
   > div {
     @include dFlex($g: 8px);
     width: 88px;
@@ -52,12 +51,11 @@ section {
     align-items: end;
   }
   > h2 {
+    text-wrap: nowrap;
     margin: 0;
     font-weight: 700;
     font-size: 90px;
     line-height: 108px;
-    width: 100%;
-    text-align: end;
     &::after {
       border: 2px solid $purple;
       width: 80px;
@@ -65,13 +63,11 @@ section {
   }
   > span {
     display: flex;
-    text-align: end;
+    text-align: center;
   }
   > a {
     @include dFlex();
-    // position: absolute;
     top: 220px;
-    transform: translateX(40px);
   }
 }
 
@@ -100,17 +96,27 @@ section {
     }
   }
   .skillTextBox {
-    align-items: end;
+    // align-items: end;
     width: calc(100% - 32px);
     margin: 0 16px;
     max-width: unset;
     > button {
       display: none;
     }
+    > span{
+      max-width: 700px;
+    }
+    > a {
+      display: none;
+    }
   }
   .skillIconBox {
     width: calc(100% - 32px);
     margin: 0 16px;
+    justify-content: center;
+  }
+  a{
+    transform: translateX(0) !important;
   }
 }
 

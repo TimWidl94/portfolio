@@ -1,7 +1,8 @@
 <section id="contact">
-  <div>
-    <div></div>
+  <div class="headline">
+    <div class="customLineLeft"></div>
     <h2>{{ "contact.headline" | translate }}</h2>
+    <div class="customLineRight"></div>
   </div>
   <div class="main">
     <div class="leftContentBox">
@@ -124,20 +125,24 @@
                   alt="checkboxUncheckedIcon"
                 />
               </div>
-              <p>
-                {{ "contact.privatPolicyFirst" | translate }}
-                <a href="" id="privatPolicyLink">{{
-                  "contact.privatPolicyLink" | translate
-                }}</a>
-                {{ "contact.privatPolicySecond" | translate }}
-              </p>
             </label>
+            <p class="privatPolicyText">
+              {{ "contact.privatPolicyFirst" | translate }}
+              <a
+                href="/app-privacy-policy"
+                routerLink="/app-privacy-policy"
+                routerLinkActive="active"
+                id="privatPolicyLink"
+                >{{ "contact.privatPolicyLink" | translate }}</a
+              >
+              {{ "contact.privatPolicySecond" | translate }}
+            </p>
           </div>
           <span
             *ngIf="alreadyChecked && !privatPolicy"
             [@fadeInOut]="!privatPolicy"
           >
-            Please accept the privacy policy
+            {{ "contact.acceptPP" | translate }}
           </span>
         </div>
         <div>
@@ -149,7 +154,8 @@
     </div>
     <a href="#landingpage" class="arrowImg"></a>
   </div>
-  <div class="shadowBackground">
-    <!-- <img src="assets/img/shadows/contactShadow.svg" alt="" /> -->
+  <div class="shadowBackground"></div>
+  <div [class.userFeedbackBox]="userFeedback" [class.dNone]="!userFeedback">
+    <span>{{ "contact.successMessage" | translate }}</span>
   </div>
 </section>

@@ -11,17 +11,30 @@
       </div>
       <div class="textBox">
         <div>
-          <p [class.deIam]="languageDeSelected" class="sideText">{{ "landingpage.iAm" | translate}}</p>
+          <p [class.deIam]="languageDeSelected" class="sideText">
+            {{ "landingpage.iAm" | translate }}
+          </p>
           <div>
             <span class="nameText">Tim Widl</span>
             <span class="customNameText">FRONTEND DEVELOPER</span>
           </div>
         </div>
-        <a href="#contact"  class="blueButton">{{ "landingpage.buttonTalk" | translate}}</a>
+        <a href="#contact" class="blueButton">{{
+          "landingpage.buttonTalk" | translate
+        }}</a>
       </div>
     </div>
-    <div class="iconBox">
-      <div></div>
+    <div [class.scrollDownDe]="!languageDeSelected" class="scrollDownBox">
+      <p>{{ "landingpage.scroll" | translate }}</p>
+      <img src="assets/img/icons/arrowDownIcon.svg" alt="" />
+    </div>
+    <div class="purpleAboutMeShadow">
+      <img src="assets/img/shadows/purpleAboutMeShadow.svg" alt="" />
+    </div>
+  </div>
+  <div class="iconBox">
+    <div class="customLineLeft"></div>
+    <div class="innerIconBox">
       <a href="https://github.com/TimWidl94" target="_blank"
         ><img src="assets/img/icons/githubIcon.svg" alt=""
       /></a>
@@ -33,13 +46,7 @@
       /></a>
       <span class="email">TimWidl195&#64;gmail.com</span>
     </div>
-    <div class="scrollDownBox">
-      <p>{{ "landingpage.scroll" | translate}}</p>
-      <img src="assets/img/icons/arrowDownIcon.svg" alt="" />
-    </div>
-    <div class="purpleAboutMeShadow">
-      <img src="assets/img/shadows/purpleAboutMeShadow.svg" alt="" />
-    </div>
+    <div class="customLineRight"></div>
   </div>
   <div class="backgroundShadowBox">
     <img class="backgroundShadow" src="assets/img/shadows/vector2.svg" alt="" />
