@@ -15,13 +15,25 @@
             {{ "landingpage.iAm" | translate }}
           </p>
           <div>
-            <span class="nameText">Tim Widl</span>
+            <span
+              class="nameText"
+              data-aos="flip-up"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+              >Tim Widl</span
+            >
             <span class="customNameText">FRONTEND DEVELOPER</span>
           </div>
         </div>
-        <a href="#contact" class="blueButton">{{
-          "landingpage.buttonTalk" | translate
-        }}</a>
+        <a
+          href="#contact"
+          class="blueButton"
+          data-aos="flip-up"
+          data-aos-offset="-200"
+          data-aos-delay="300"
+          data-aos-duration="1000"
+          >{{ "landingpage.buttonTalk" | translate }}</a
+        >
       </div>
     </div>
     <div [class.scrollDownDe]="!languageDeSelected" class="scrollDownBox">

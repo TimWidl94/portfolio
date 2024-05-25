@@ -1,5 +1,5 @@
 <section id="contact">
-  <div class="headline">
+  <div class="headline" data-aos="slide-right">
     <div class="customLineLeft"></div>
     <h2>{{ "contact.headline" | translate }}</h2>
     <div class="customLineRight"></div>
@@ -129,8 +129,8 @@
             <p class="privatPolicyText">
               {{ "contact.privatPolicyFirst" | translate }}
               <a
-                href="/app-privacy-policy"
-                routerLink="/app-privacy-policy"
+                href="/privacy-policy"
+                routerLink="/privacy-policy"
                 routerLinkActive="active"
                 id="privatPolicyLink"
                 >{{ "contact.privatPolicyLink" | translate }}</a
@@ -145,7 +145,7 @@
             {{ "contact.acceptPP" | translate }}
           </span>
         </div>
-        <div>
+        <div style="margin-top: 20px;">
           <button class="blueButton" [disabled]="!isFormValid(contactForm)">
             {{ "contact.button" | translate }}
           </button>

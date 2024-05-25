@@ -18,7 +18,7 @@ section {
 .aboutContentBox {
   @include dFlex($jc: space-between);
   width: 100%;
-  padding: 120px 0;
+  padding-top: 120px;
   max-width: calc(1440px - 16px);
   margin-left: 16px;
   > div {
@@ -94,6 +94,10 @@ section {
 
 .customBoxLeft {
   flex-grow: 1;
+}
+
+[data-aos=slide-right]{
+  transform: translate3d(-140%, 0, 0);
 }
 
 @media (max-width: 1250px) {

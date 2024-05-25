@@ -3,13 +3,13 @@
 section {
   @include dFlex();
   flex-direction: column;
-  // margin-bottom: 150px;
-  width: 100%;
+  padding-top: 100px;
 }
 
 .main {
   max-width: 1440px;
-  width: 100%;
+  width: calc(100% - 32px);
+  margin: 0 16px;
   padding-top: 160px;
   &:not(:last-child) {
     z-index: 2;
@@ -20,7 +20,6 @@ section {
   @include dFlex();
   flex-direction: column;
   width: 100%;
-  // margin-bottom: 140px;
   > div {
     @include dFlex($jc: space-between);
     width: 100%;
@@ -75,12 +74,13 @@ section {
   // max-width: 1168px;
   width: 100%;
   z-index: 1;
-  margin-bottom: 160px;
+  &:not(:last-child) {
+    margin-bottom: 160px;
+  }
   > div {
     @include dFlex($ai: start);
     flex-direction: column;
     color: white;
-    max-width: 900px;
     > img {
       scale: 0.8;
     }
@@ -97,6 +97,9 @@ section {
       font-weight: 400;
       font-size: 23px;
       line-height: 27.6px;
+    }
+    > span {
+      max-width: 700px;
     }
   }
 }
@@ -136,8 +139,7 @@ section {
   }
   .project {
     flex-direction: column !important;
-    width: calc(100% - 32px);
-    margin: 0 16px 100px 16px;
+    margin-bottom: 100px;
     z-index: 2;
     > div {
       align-items: center;
@@ -152,12 +154,14 @@ section {
   .customLineLeft {
     width: 50px;
   }
-  .description{
+  .description {
     max-width: 700px;
     text-align: center;
     word-wrap: break-word;
   }
-
+  .mediaCenter {
+    align-items: center !important;
+  }
 }
 
 @media (max-width: 700px) {

@@ -1,28 +1,101 @@
 <header>
-  <div>
+  <div data-aos="fade-down">
     <img src="assets/img/logo/logoTim.svg" alt="" />
     <div class="headlineMenu">
-      <a href="#aboutMe">{{ "header.aboutMe" | translate }}</a>
-      <a href="#skills">{{ "header.skills" | translate }}</a>
-      <a href="#projects">{{ "header.portfolio" | translate }}</a>
+      <a
+        href="#aboutMe"
+        (click)="activateLink('aboutMe')"
+        [class.activeLink]="linkAboutMeActive"
+        >{{ "header.aboutMe" | translate }}</a
+      >
+      <a
+        href="#skills"
+        (click)="activateLink('skills')"
+        [class.activeLink]="linkSkillsActive"
+        >{{ "header.skills" | translate }}</a
+      >
+      <a
+        href="#projects"
+        (click)="activateLink('projects')"
+        [class.activeLink]="linkProjectsActive"
+        >{{ "header.portfolio" | translate }}</a
+      >
       <div class="languageButtonBox">
-        <button name="deButton" class="languageButton" [class.selectedLanguage]="languageDeSelected" (click)="changeLanguage('de')">DE</button>
+        <button
+          name="deButton"
+          class="languageButton"
+          [class.selectedLanguage]="languageDeSelected"
+          (click)="changeLanguage('de')"
+        >
+          DE
+        </button>
         <span style="color: white">|</span>
-        <button name="enButton" class="languageButton" [class.selectedLanguage]="!languageDeSelected" (click)="changeLanguage('en')">EN</button>
+        <button
+          name="enButton"
+          class="languageButton"
+          [class.selectedLanguage]="!languageDeSelected"
+          (click)="changeLanguage('en')"
+        >
+          EN
+        </button>
       </div>
     </div>
-    <div class="burgerMenu" (click)="toggleBurgerMenu()"></div>
-    <div class="burgerMenuOpen" [class.displayFlex]="burgerMenu">
-      <div class="burgerMenuCloseIcon" (click)="toggleBurgerMenu()"></div>
-      <a href="#aboutMe">{{ "header.aboutMe" | translate }}</a>
-      <a href="#skills">{{ "header.skills" | translate }}</a>
-      <a href="#projects">{{ "header.portfolio" | translate }}</a>
-      <a href="#contact">{{ "header.contact" | translate }}</a>
-      <div class="languageButtonBox languageButtonBoxBurgerMenu">
-        <button name="deButton" class="languageButton" [class.selectedLanguage]="languageDeSelected" (click)="changeLanguage('de')">DE</button>
-        <span style="color: white">|</span>
-        <button name="enButton" class="languageButton" [class.selectedLanguage]="!languageDeSelected" (click)="changeLanguage('en')">EN</button>
+    <div class="box">
+      <div
+        [ngClass]="{ active: buttonActive, 'not-active': !buttonActive }"
+        (click)="toggleBurgerMenu()"
+      >
+        <span class="buttonLine"></span>
+        <span class="buttonLine"></span>
+        <span class="buttonLine"></span>
       </div>
     </div>
   </div>
+  <div class="burgerMenuOpen" [class.displayFlex]="burgerMenu">
+    <div class="burgerMenuCloseIcon" (click)="toggleBurgerMenu()"></div>
+    <a
+      href="#aboutMe"
+      (click)="activateLink('aboutMe')"
+      [class.activeLink]="linkAboutMeActive"
+      >{{ "header.aboutMe" | translate }}</a
+    >
+    <a
+      href="#skills"
+      (click)="activateLink('skills')"
+      [class.activeLink]="linkSkillsActive"
+      >{{ "header.skills" | translate }}</a
+    >
+    <a
+      href="#projects"
+      (click)="activateLink('projects')"
+      [class.activeLink]="linkProjectsActive"
+      >{{ "header.portfolio" | translate }}</a
+    >
+    <a
+      href="#contact"
+      (click)="activateLink('contact')"
+      [class.activeLink]="linkContactActive"
+      >{{ "header.contact" | translate }}</a
+    >
+    <div class="languageButtonBox languageButtonBoxBurgerMenu">
+      <button
+        name="deButton"
+        class="languageButton"
+        [class.selectedLanguage]="languageDeSelected"
+        (click)="changeLanguage('de')"
+      >
+        DE
+      </button>
+      <span style="color: white">|</span>
+      <button
+        name="enButton"
+        class="languageButton"
+        [class.selectedLanguage]="!languageDeSelected"
+        (click)="changeLanguage('en')"
+      >
+        EN
+      </button>
+    </div>
+  </div>
 </header>
+

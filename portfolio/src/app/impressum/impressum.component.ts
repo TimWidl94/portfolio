@@ -4,7 +4,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 
 @Component({
-  selector: 'app-impressum',
+  selector: 'impressum',
   standalone: true,
   imports: [TranslateModule],
   templateUrl: './impressum.component.html',
@@ -14,7 +14,7 @@ export class ImpressumComponent implements OnInit {
   constructor(private router: Router, public translateService: TranslateService) {}
 
   ngOnInit() {
-    this.router.navigateByUrl('/app-impressum').then(() => {
+    this.router.navigateByUrl('/impressum').then(() => {
       window.scrollTo(0, 0);
     });
   }

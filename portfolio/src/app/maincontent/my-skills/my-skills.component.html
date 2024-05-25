@@ -1,16 +1,35 @@
 <section id="skills">
   <main>
-    <button class="blueButton mediaButton">{{ "mySkills.button" | translate }}</button>
-    <div class="skillIconBox">
+    <a
+      href="#contact"
+      class="blueButton mediaButton"
+      data-aos="flip-up"
+      data-aos-delay="300"
+      data-aos-duration="1000"
+      >{{ "mySkills.button" | translate }}</a
+    >
+    <div
+      class="skillIconBox"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+      data-aos-duration="800"
+    >
       <div *ngFor="let icon of skillIcons; let i = index">
         <img src="assets/img/icons/{{ icon }}" alt="" />
         <span>{{ skillNames[i] }}</span>
       </div>
     </div>
     <div class="skillTextBox">
-      <h2>{{ "mySkills.headline" | translate}}</h2>
+      <h2>{{ "mySkills.headline" | translate }}</h2>
       <span>{{ "mySkills.textbox" | translate }}</span>
-      <a href="#contact" class="blueButton">{{ "mySkills.button" | translate }}</a>
+      <a
+        href="#contact"
+        class="blueButton"
+        data-aos="flip-up"
+        data-aos-delay="300"
+        data-aos-duration="1000"
+        >{{ "mySkills.button" | translate }}</a
+      >
     </div>
   </main>
   <div class="skillShadowLeft">

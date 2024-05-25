@@ -1,5 +1,5 @@
 <section id="projects">
-  <div class="headlineBox">
+  <div class="headlineBox" data-aos="fade-right">
     <div>
       <div class="customLineLeftBox">
         <div class="customLineLeftEmpty"></div>
@@ -18,12 +18,19 @@
         [ngStyle]="{ 'flex-direction': i % 2 === 0 ? 'row' : 'row-reverse' }"
       >
         <div
+          data-aos="flip-up"
+          data-aos-duration="500"
           class="projectImg"
           [style.background-image]="
             'url(assets/img/projects/' + project['projectImg'] + ')'
           "
         ></div>
-        <div [ngStyle]="{ 'align-items': i % 2 === 0 ? 'start' : 'end' }">
+        <div
+          data-aos="flip-down"
+          data-aos-duration="500"
+          [ngStyle]="{ 'align-items': i % 2 === 0 ? 'start' : 'end' }"
+          class="mediaCenter"
+        >
           <h3>{{ project["projectName"] }}</h3>
           <h4>{{ project["projectTechnologie"] }}</h4>
           <span>{{ project["projectDescription"] | translate }}</span>

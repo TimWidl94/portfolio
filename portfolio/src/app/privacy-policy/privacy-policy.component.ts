@@ -1,14 +1,23 @@
-import { Component } from '@angular/core';
-import { Router, RouterLink, RouterLinkActive } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-privacy-policy',
+  selector: 'privacy-policy',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, TranslateModule],
+  imports: [TranslateModule],
   templateUrl: './privacy-policy.component.html',
-  styleUrl: './privacy-policy.component.scss'
+  styleUrl: './privacy-policy.component.scss',
 })
-export class PrivacyPolicyComponent {
-  constructor(private router: Router, public translateService: TranslateService) {}
+export class PrivacyPolicyComponent implements OnInit {
+  constructor(
+    private router: Router,
+    public translateService: TranslateService
+  ) {}
+
+  ngOnInit() {
+    this.router.navigateByUrl('/privacy-policy').then(() => {
+      window.scrollTo(0, 0);
+    });
+  }
 }

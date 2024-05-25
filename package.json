@@ -1,5 +1,9 @@
 {
   "dependencies": {
-    "@angular/animations": "^17.3.7"
+    "@angular/animations": "^17.3.7",
+    "aos": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7"
   }
 }

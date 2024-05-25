@@ -99,7 +99,7 @@ body {
   margin: 0;
   @include dFlex();
   width: 100%;
-  // overflow-x: hidden;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
