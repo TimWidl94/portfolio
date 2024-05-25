@@ -129,9 +129,8 @@
             <p class="privatPolicyText">
               {{ "contact.privatPolicyFirst" | translate }}
               <a
-                href="/privacy-policy"
+              (click)="consolelog()"
                 routerLink="/privacy-policy"
-                routerLinkActive="active"
                 id="privatPolicyLink"
                 >{{ "contact.privatPolicyLink" | translate }}</a
               >

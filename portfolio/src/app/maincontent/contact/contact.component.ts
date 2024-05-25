@@ -10,11 +10,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, inject } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, CommonModule, TranslateModule],
+  imports: [FormsModule, CommonModule, TranslateModule, RouterLink, RouterLinkActive],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   animations: [
@@ -137,4 +138,9 @@ export class ContactComponent implements OnInit {
       console.log("auf true gesetzt", this.userFeedback);
     }, 3000)
   }
+
+  consolelog(){
+    console.log("es wird was gemacht")
+  }
+
 }
