@@ -115,7 +115,7 @@ section {
   border-top-right-radius: 8px;
 }
 
-.customLineRight{
+.customLineRight {
   flex-grow: 1;
 }
 
@@ -216,6 +216,34 @@ section {
   right: 28px;
 }
 
+
+
+@media (min-width: 2200px) {
+  .backgroundShadowBox {
+    top: 600px !important;
+  }
+}
+
+@media (min-width: 3200px) {
+  .backgroundShadowBox {
+    top: 550px !important;
+  }
+}
+
+@media (min-width: 3700px) {
+  .backgroundShadowBox {
+    top: 500px !important;
+  }
+}
+
+@media (min-width: 4000px) {
+  .backgroundShadowBox {
+    top: 450px !important;
+  }
+}
+
+
+
 @media (min-width: 1200px) and (min-height: 1100px) {
   section {
     height: calc(100vh - 104px) !important;
@@ -276,7 +304,7 @@ section {
   .imgShadow {
     scale: 1.5;
   }
-  .deIam{
+  .deIam {
     font-size: 32px !important;
   }
 }
@@ -361,7 +389,7 @@ section {
   .imgBox {
     height: 250px;
   }
-  .customLineLeft{
+  .customLineLeft {
     min-width: 50px;
   }
 }

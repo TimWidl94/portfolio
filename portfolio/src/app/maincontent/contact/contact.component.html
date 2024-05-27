@@ -47,7 +47,7 @@
             type="email"
             placeholder="{{ 'contact.placeholderEmail' | translate }}"
             required
-            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,6}$"
             [class.inputError]="!email.valid && email.touched"
             [class.inputCorrect]="(email.valid && email.touched) || email.valid"
             [class.inputTouched]="
@@ -128,12 +128,9 @@
             </label>
             <p class="privatPolicyText">
               {{ "contact.privatPolicyFirst" | translate }}
-              <a
-              (click)="consolelog()"
-                routerLink="/privacy-policy"
-                id="privatPolicyLink"
-                >{{ "contact.privatPolicyLink" | translate }}</a
-              >
+              <a routerLink="/privacy-policy" id="privatPolicyLink">{{
+                "contact.privatPolicyLink" | translate
+              }}</a>
               {{ "contact.privatPolicySecond" | translate }}
             </p>
           </div>
@@ -144,7 +141,7 @@
             {{ "contact.acceptPP" | translate }}
           </span>
         </div>
-        <div style="margin-top: 20px;">
+        <div style="margin-top: 20px">
           <button class="blueButton" [disabled]="!isFormValid(contactForm)">
             {{ "contact.button" | translate }}
           </button>

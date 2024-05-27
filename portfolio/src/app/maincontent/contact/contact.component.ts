@@ -90,7 +90,6 @@ export class ContactComponent implements OnInit {
         .post(this.post.endPoint, this.post.body(this.contactData))
         .subscribe({
           next: (response) => {
-            console.log("hat geklappt",this.contactData);
             ngForm.resetForm();
             this.userFeedbackInitialization();
           },
@@ -98,7 +97,7 @@ export class ContactComponent implements OnInit {
             console.error("hat nicht geklappt", error);
             this.userFeedbackInitialization();
           },
-          complete: () => console.info('send post complete'),
+          complete: () => console.info(),
         });
     } else if (
       ngForm.submitted &&
@@ -107,7 +106,6 @@ export class ContactComponent implements OnInit {
       this.privatPolicy
     ) {
       this.userFeedbackInitialization();
-      console.log("hat mit elseif geklappt", this.contactData);
       ngForm.resetForm();
     }
   }
@@ -132,15 +130,10 @@ export class ContactComponent implements OnInit {
 
   userFeedbackInitialization(){
     this.userFeedback = true;
-    console.log("auf true gesetzt", this.userFeedback);
     setTimeout(() => {
       this.userFeedback = false;
-      console.log("auf true gesetzt", this.userFeedback);
     }, 3000)
   }
 
-  consolelog(){
-    console.log("es wird was gemacht")
-  }
 
 }

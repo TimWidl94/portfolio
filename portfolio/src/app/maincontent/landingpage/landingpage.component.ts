@@ -21,7 +21,6 @@ export class LandingpageComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.setLanguage = this.translateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.useLang(event.lang);
-      console.log("Language changed, subscription value:", this.setLanguage);
     });
 
     // Initial language setup

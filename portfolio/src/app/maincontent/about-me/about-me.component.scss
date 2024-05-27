@@ -13,12 +13,12 @@ section {
 .main {
   @include dFlex();
   width: 100%;
+  padding-top: 120px;
 }
 
 .aboutContentBox {
   @include dFlex($jc: space-between);
   width: 100%;
-  padding-top: 120px;
   max-width: calc(1440px - 16px);
   margin-left: 16px;
   > div {
