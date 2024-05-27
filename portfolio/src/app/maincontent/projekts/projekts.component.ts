@@ -22,29 +22,19 @@ export class ProjektsComponent {
       projectTechnologie: 'HTML | CSS | Javascript',
       projectDescription:
         'portfolio.join',
-      projectLink: '',
+      projectLink: 'https://join.Tim-Widl.de/logIn.html',
       projectGitHub: 'https://github.com/TimWidl94/Join',
       projectImg: 'laptopJoin.png',
       translatedDescription: '',
     },
     {
-      projectName: 'El Polo Loco',
+      projectName: 'El Pollo Loco',
       projectTechnologie: 'HTML | CSS | Javascript',
       projectDescription:
         'portfolio.epl',
-      projectLink: '',
+      projectLink: 'https://el-polo-loco.Tim-Widl.de',
       projectGitHub: 'https://github.com/TimWidl94/El-Polo-Loco',
       projectImg: 'laptopElPoloLoco.png',
-      translatedDescription: '',
-    },
-    {
-      projectName: 'Pokedex',
-      projectTechnologie: 'HTML | CSS | Javascript | Api',
-      projectDescription:
-        'portfolio.pokedex',
-      projectLink: '',
-      projectGitHub: 'https://github.com/TimWidl94/Pokedex',
-      projectImg: 'laptopPokemon.png',
       translatedDescription: '',
     },
   ];

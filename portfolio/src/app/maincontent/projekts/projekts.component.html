@@ -35,7 +35,7 @@
           <h4>{{ project["projectTechnologie"] }}</h4>
           <span>{{ project["projectDescription"] | translate }}</span>
           <div class="buttonBox">
-            <a href="" class="purpleButton">Live test</a>
+            <a href="{{ project.projectLink }}" target="_blank" class="purpleButton">Live test</a>
             <a
               href="{{ project.projectGitHub }}"
               target="_blank"

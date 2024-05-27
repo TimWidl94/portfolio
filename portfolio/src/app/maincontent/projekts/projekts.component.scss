@@ -71,7 +71,6 @@ section {
 
 .project {
   @include dFlex($g: 40px);
-  // max-width: 1168px;
   width: 100%;
   z-index: 1;
   &:not(:last-child) {

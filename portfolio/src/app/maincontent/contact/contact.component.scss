@@ -208,6 +208,7 @@ input:-webkit-autofill {
     margin-bottom: 8px;
     &:focus {
       outline: none;
+      border: 1px solid $blueText;
     }
     &::-webkit-input-placeholder {
       color: white;
@@ -223,6 +224,9 @@ input:-webkit-autofill {
 
     &::placeholder {
       color: white;
+    }
+    &:hover{
+      border: 1px solid $blueText;
     }
   }
   > span {

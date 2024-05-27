@@ -24,8 +24,7 @@
   "portfolio": {
     "exploreHtml": "Explore a selection of my work here - interact with projects to see my skills in action",
     "join": "Task manager inspired by the Kanban System. Create and organize tasks using drag and drop functions, assign users and categories.",
-    "epl": "A simple Jump-and-run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the killer chicken.",
-    "pokedex": "Based on the PokéAPI a simple library that provides and catalogues pokemon information."
+    "epl": "A simple Jump-and-run game based on an object-oriented approach. Help Pepe to find coins and salsa bottles to fight against the killer chicken."
   },
   "contact": {
     "headline": "Contact",
@@ -43,8 +42,8 @@
     "privatPolicySecond": "and agree to the processing of my data as outlined.",
     "privatPolicyLink": "privacy policy",
     "button": "Send message :)",
-    "acceptPP": "Please accept the privacy policy.",
-    "successMessage": "Thank you for your message."
+    "acceptPP": "Please accept the privacy policy",
+    "successMessage": "Thank you for your message"
   },
   "impressum": {
     "headline": "Impressum",
