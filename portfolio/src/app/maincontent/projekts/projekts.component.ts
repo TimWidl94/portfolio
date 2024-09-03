@@ -19,7 +19,7 @@ export class ProjektsComponent {
   projects = [
     {
       projectName: 'Join',
-      projectTechnologie: 'HTML | CSS | Javascript',
+      projectTechnologie: 'HTML | CSS | JavaScript',
       projectDescription:
         'portfolio.join',
       projectLink: 'https://join.Tim-Widl.de/logIn.html',
@@ -29,7 +29,7 @@ export class ProjektsComponent {
     },
     {
       projectName: 'El Pollo Loco',
-      projectTechnologie: 'HTML | CSS | Javascript',
+      projectTechnologie: 'HTML | CSS | JavaScript',
       projectDescription:
         'portfolio.epl',
       projectLink: 'https://el-polo-loco.Tim-Widl.de',
